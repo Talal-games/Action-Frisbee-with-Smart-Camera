@@ -22,7 +22,7 @@
 
 *.suo
 .vs/
-*.csproj~SkateboardUpdates
+
 
 # Never ignore DLLs in the FMOD subfolder.
 !/[Aa]ssets/Plugins/FMOD/**/lib/*
