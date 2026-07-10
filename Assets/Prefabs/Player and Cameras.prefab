@@ -91,7 +91,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 2e-44, z: 6.19e-42, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -7.3135295e-27}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -144,8 +144,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438180687764428403}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.119756795, y: -0.013251315, z: 0.015237593, w: 0.9925979}
-  m_LocalPosition: {x: -0.016555494, y: 7.277979, z: -6.025979}
+  m_LocalRotation: {x: 0.119757116, y: -0.013251283, z: 0.015237567, w: 0.9925979}
+  m_LocalPosition: {x: -0.016555877, y: 7.277987, z: -6.025973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -328,8 +328,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994550532108960615}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.119756795, y: -0.013251262, z: 0.015237532, w: 0.9925979}
-  m_LocalPosition: {x: -0.016555494, y: 7.277979, z: -6.025979}
+  m_LocalRotation: {x: 0.119757116, y: -0.013251283, z: 0.015237567, w: 0.9925979}
+  m_LocalPosition: {x: -0.016555877, y: 7.277987, z: -6.025973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   throwSpinSpeed: 45.22
   maxTilt: 46.3
   tiltSmoothing: 2.6
-  maxSpeedForTilt: 16.44
+  maxSpeedForTilt: 43.1
   rb: {fileID: 1269216974919415}
   tiltTransform: {fileID: 4908620552177253593}
 --- !u!1 &5339847241424702010
@@ -1521,9 +1521,9 @@ Transform:
   m_Children:
   - {fileID: 6235705279233522813}
   - {fileID: 5119247359289814414}
+  - {fileID: 5522640634584216186}
   - {fileID: 4908620552177253593}
   - {fileID: 7384978655238280206}
-  - {fileID: 5522640634584216186}
   m_Father: {fileID: 983101897164221905}
   m_LocalEulerAnglesHint: {x: 0.07, y: 2.313, z: 0}
 --- !u!54 &1269216974919415
@@ -1703,8 +1703,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6056152098774359652}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.119756795, y: -0.013251262, z: 0.015237532, w: 0.9925979}
-  m_LocalPosition: {x: -0.016555494, y: 7.277979, z: -6.025979}
+  m_LocalRotation: {x: 0.119757116, y: -0.013251283, z: 0.015237567, w: 0.9925979}
+  m_LocalPosition: {x: -0.016555877, y: 7.277987, z: -6.025973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1783,8 +1783,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6168766853878116848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28756794, y: -3.2150102e-10, z: -0.0000000012741469, w: 0.9577603}
-  m_LocalPosition: {x: 0.032546997, y: 7.9200006, z: -11.954803}
+  m_LocalRotation: {x: 0.28756788, y: -0, z: -0, w: 0.9577603}
+  m_LocalPosition: {x: 0.032546997, y: 7.92, z: -11.954803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1902,10 +1902,14 @@ GameObject:
   m_Component:
   - component: {fileID: 983101897164221905}
   - component: {fileID: 903137730193840810}
+  - component: {fileID: 662244881133557799}
+  - component: {fileID: 771133559922446688}
+  - component: {fileID: 771133559922446689}
+  - component: {fileID: 556677889900112233}
   - component: {fileID: 3393185956106921584}
   - component: {fileID: 8858459069182096875}
+  - component: {fileID: 8858459069182096876}
   - component: {fileID: 2248308737450296137}
-  - component: {fileID: 9188149141561934053}
   m_Layer: 0
   m_Name: Player and Cameras
   m_TagString: Untagged
@@ -1945,20 +1949,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646e96dedd9c3d647b6fa93a193c3f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &662244881133557799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265091899472767610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f156f3452679477b8fc72ae50cfb9152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   startingThrows: 3
   throwsAddedPerTargetHit: 2
   collisionThreshold: 0.3
+  currentThrows: 0
+  isAimingClearTarget: 0
+  targetHitLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  lethalObstacleLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  playerCameraController: {fileID: 2248308737450296137}
+  statsUI: {fileID: 0}
+--- !u!114 &771133559922446688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265091899472767610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3b68fa85294e6d95c1dbf20ccaa201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   jumpBufferTime: 0.1
   switchingBufferTime: 1
-  throwForce: 72394
+--- !u!114 &771133559922446689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265091899472767610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4731fd54b0345e795071f1430c6e48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeLight: {fileID: 6235863780215328763}
+  minChargeLight: 12
+  maxChargeLight: 30
+  maxFlySpeedForVolume: 53
+--- !u!114 &556677889900112233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265091899472767610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb178c91e11b244e9f0fe2e05cf32d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   angleRate: 8.48
   maxAimAngle: 66.1
   throwPowerRate: 0.71
   maxThrowPower: 40.6
   minThrowPower: 12.13
-  isAimingClearTarget: 0
   aimAtTargetSpeed: 100
-  maxVelGainFromTurn: 1.47
   turnRate: 1.47
   autoTurnThreshold: 0.99
   isAutoTurn: 1
@@ -1970,13 +2033,6 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  playerCameraController: {fileID: 2248308737450296137}
-  turnTargetEffectsPrefab: {fileID: 5595990719683829869, guid: a3b39b9a77468f841a54e30e2aad5774,
-    type: 3}
-  chargeLight: {fileID: 6235863780215328763}
-  minChargeLight: 12
-  maxChargeLight: 30
-  maxFlySpeedForVolume: 53
 --- !u!114 &3393185956106921584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,17 +2067,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 7255096853478308268}
   aimTarget: {fileID: 0}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  targetedEffectsPrefab: {fileID: 7888136167854738943, guid: 1c1519722c0bb75479af0de6261fc3c3,
-    type: 3}
+  turningTarget: {fileID: 0}
   targetSearchRadius: 100
   maxScreenDistanceFromCenter: 250
   targetSwitchCooldown: 0.23
   switchThresholdRatio: 0.8
   rb: {fileID: 1269216974919415}
---- !u!114 &2248308737450296137
+--- !u!114 &8858459069182096876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2030,16 +2082,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7265091899472767610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d4fc353bc54d98ad4d628f70a68bfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 4087c82ed5b24e7398d41252ad37456f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thirdPersonCamera: {fileID: 3298758298231726668}
-  heliCamera: {fileID: 3909051944405552462}
-  switchByPriority: 1
-  activePriority: 20
-  inactivePriority: 10
-  freeLookVelocityAngleSetter: {fileID: 1477610146070101965}
---- !u!114 &9188149141561934053
+  targetedEffectsPrefab: {fileID: 7888136167854738943, guid: 1c1519722c0bb75479af0de6261fc3c3,
+    type: 3}
+  turnTargetEffectsPrefab: {fileID: 5595990719683829869, guid: a3b39b9a77468f841a54e30e2aad5774,
+    type: 3}
+--- !u!114 &2248308737450296137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2175,7 +2225,7 @@ GameObject:
   - component: {fileID: 1563696971210784821}
   - component: {fileID: 2843664790545615097}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: ThrowDir particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2189,9 +2239,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7547030728799937635}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00061062817, y: -0.025116164, z: 0.00001534148, w: 0.9996844}
+  m_LocalRotation: {x: -0.0006106282, y: -0.025116164, z: 0.000015341479, w: 0.9996844}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.44584006, z: 1}
+  m_LocalScale: {x: 1.8593928, y: 0.8289918, z: 1.8593928}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4607526628637512694}
@@ -2279,7 +2329,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2332,7 +2382,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.9
+      scalar: 3.36
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2450,7 +2500,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.82
+      scalar: 1.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2835,7 +2885,7 @@ ParticleSystem:
     donutRadius: 0.46
     m_Position: {x: -0.00000019516398, y: 0, z: -0.0000009917326}
     m_Rotation: {x: -0, y: 90, z: 0}
-    m_Scale: {x: 0.11954946, y: 0.12371251, z: 0.045913488}
+    m_Scale: {x: 0.11954946, y: 0.12371251, z: 0.5124122}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -3033,7 +3083,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 90
+      scalar: 482
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3139,7 +3189,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -3471,10 +3521,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.25882354}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 0.06666667}
+        key2: {r: 0, g: 0, b: 0, a: 0.08627451}
+        key3: {r: 0, g: 0, b: 0, a: 0.101960786}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -3488,17 +3538,17 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 10216
-        atime2: 60138
-        atime3: 39707
-        atime4: 0
-        atime5: 0
+        atime1: 5783
+        atime2: 27756
+        atime3: 51464
+        atime4: 65535
+        atime5: 65535
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumAlphaKeys: 5
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4848,11 +4898,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.39
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5009,7 +5059,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 0.56
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -5018,7 +5068,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 11.33
       minScalar: 0
       maxCurve:
         serializedVersion: 2

@@ -1,73 +1,36 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetCollisionHandler : MonoBehaviour
 {
     public static event Action<TargetCollisionHandler> TargetBroken;
 
-    public GameObject particleEffectPrefab;
-    [SerializeField] LayerMask targetLayer = 6;
-    [SerializeField] LayerMask obstacleLayer = 7;
-    [SerializeField] Light light;
-    bool isActive = true;
+    [Header("Target Layers")]
+    [SerializeField] private bool switchLayerWhenHit = true;
+    [SerializeField] private int activeTargetLayer = 6;
+    [SerializeField] private int brokenObstacleLayer = 7;
+
+    private bool isActive = true;
     public bool IsActive => isActive;
-
-
+    public Vector3 LastBreakPosition { get; private set; }
 
     public void CollisionBehavior(Vector3 pos)
     {
         if (!isActive) return;
 
         isActive = false;
+        LastBreakPosition = pos;
         TargetBroken?.Invoke(this);
-        InstantiateParticle(pos);
         SwitchToObstacleLayer();
-        BreakTarget(pos);
-        
-
-    }
-    
-
-
-
-    private void InstantiateParticle(Vector3 pos)
-    {
-        Instantiate(particleEffectPrefab, pos, Quaternion.identity);
     }
 
     private void SwitchToObstacleLayer()
     {
-        if (gameObject.layer == targetLayer)
+        if (!switchLayerWhenHit) return;
+
+        if (gameObject.layer == activeTargetLayer)
         {
-            gameObject.layer = obstacleLayer;
+            gameObject.layer = brokenObstacleLayer;
         }
-    }
-
-    private void BreakTarget(Vector3 breakPosition)
-    {
-        PlayBreakSound(breakPosition);
-
-        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
-        foreach (Rigidbody rb in rigidbodies)
-        {
-            rb.isKinematic = false;
-            rb.useGravity = true;
-        }
-        light.enabled = false;
-        
-    }
-
-    private void PlayBreakSound(Vector3 breakPosition)
-    {
-        if (FrisbeeFmodAudioManager.Instance == null || FrisbeeFmodSoundDirectory.Instance == null) return;
-
-        FrisbeeFmodAudioManager.Instance.PlayOneShot(FrisbeeFmodSoundDirectory.Instance.TargetBreak, breakPosition);
-    }
-
-    private void EndLevel()
-    {
-        throw new NotImplementedException();
     }
 }

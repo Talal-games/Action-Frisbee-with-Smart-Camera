@@ -1,16 +1,15 @@
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(TargetFeedback))]
 public class TargetSelector : MonoBehaviour
 {
-    public Camera mainCamera;
+    private TargetFeedback targetFeedback;
+    [SerializeField] private Camera mainCamera;
     [FormerlySerializedAs("currentTarget")]
-    public GameObject aimTarget;
-    public LayerMask targetLayer;
-    public GameObject targetedEffectsPrefab;
+    [SerializeField, ReadOnly] private GameObject aimTarget;
 
-    private GameObject currentEffectsInstance;
+    [SerializeField, ReadOnly] private GameObject turningTarget;
     [SerializeField] private float targetSearchRadius = 50f;
     [SerializeField] private float maxScreenDistanceFromCenter = 250f;
     [SerializeField, Min(0f)] private float targetSwitchCooldown = 0.35f;
@@ -19,21 +18,19 @@ public class TargetSelector : MonoBehaviour
 
     private float nextTargetSwitchTime;
 
-    private bool downPressed;
-    private bool upPressed;
-    private bool rightPressed;
-    private bool leftPressed;
-    private bool isPressingDirection;
+    public GameObject AimTarget => aimTarget;
+    public GameObject TurningTarget => turningTarget;
 
     void Start()
     {
+        targetFeedback = GetComponent<TargetFeedback>();
         if (mainCamera == null) mainCamera = Camera.main;
 
         TargetCollisionHandler.TargetBroken += HandleTargetBroken;
 
         if (aimTarget == null)
         {
-            InitializeTarget();
+            SelectInitialAimTarget();
         }
     }
 
@@ -42,7 +39,7 @@ public class TargetSelector : MonoBehaviour
         TargetCollisionHandler.TargetBroken -= HandleTargetBroken;
     }
 
-    private void InitializeTarget()
+    private void SelectInitialAimTarget()
     {
         TargetCollisionHandler[] allTargets = Object.FindObjectsByType<TargetCollisionHandler>(FindObjectsSortMode.None);
         if (allTargets.Length == 0) return;
@@ -69,43 +66,46 @@ public class TargetSelector : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        rightPressed = Input.GetKey(KeyCode.RightArrow);
-        leftPressed = Input.GetKey(KeyCode.LeftArrow);
-        upPressed = Input.GetKey(KeyCode.UpArrow);
-        downPressed = Input.GetKey(KeyCode.DownArrow);
-
-        if (Input.GetKeyUp(KeyCode.RightArrow) ||
-            Input.GetKeyUp(KeyCode.LeftArrow) ||
-            Input.GetKeyUp(KeyCode.UpArrow) ||
-            Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            isPressingDirection = false;
-        }
-
-    }
-    public void RemoveAimTarget()
+    public void ClearAimTarget()
     {
         aimTarget = null;
         nextTargetSwitchTime = 0f;
-        if (currentEffectsInstance != null)
+        targetFeedback?.ClearAimTargetEffects();
+    }
+
+    public void ClearTurningTarget()
+    {
+        turningTarget = null;
+        targetFeedback?.ClearTurningTargetEffects();
+    }
+
+    public void ClearAimAndTurningTargets()
+    {
+        ClearAimTarget();
+        ClearTurningTarget();
+    }
+
+    public void SetTurningTargetFromAimTarget()
+    {
+        turningTarget = aimTarget;
+        targetFeedback?.ShowTurningTargetEffects(turningTarget);
+    }
+
+    public void ClearAimTargetForThrowing(bool shouldClearTurningTarget)
+    {
+        ClearAimTarget();
+        if (shouldClearTurningTarget)
         {
-            Destroy(currentEffectsInstance);
-            currentEffectsInstance = null;
+            ClearTurningTarget();
         }
     }
 
-    public void RunTargetSelection()
+    public void UpdateAimTargetSelection()
     {
-        /* if (rightPressed && ! isPressingDirection) SelectInDirection(Vector2.right, targetSearchRadius);
-         if (leftPressed && !isPressingDirection) SelectInDirection(Vector2.left, targetSearchRadius);
-         if (upPressed && !isPressingDirection) SelectInDirection(Vector2.up, targetSearchRadius);
-         if (downPressed && !isPressingDirection) SelectInDirection(Vector2.down, targetSearchRadius);*/
-        SelectTargetNearCenter();
+        SelectAimTargetNearScreenCenter();
 
     }
-    public void SelectTargetNearCenter()
+    private void SelectAimTargetNearScreenCenter()
     {
         if (mainCamera == null) mainCamera = Camera.main;
         if (mainCamera == null) return;
@@ -156,83 +156,25 @@ public class TargetSelector : MonoBehaviour
     }
 
 
-    void SelectInDirection(Vector2 inputDir,float targetSelectionRange)
-    {
-        isPressingDirection = true;
-        if (mainCamera == null) mainCamera = Camera.main;
-        if (mainCamera == null) return;
-        if (aimTarget == null) InitializeTarget();
-
-        // Gather all active targets in range
-        TargetCollisionHandler[] allTargets = Object.FindObjectsByType<TargetCollisionHandler>(FindObjectsSortMode.None);
-        if (allTargets.Length == 0) return;
-
-        Vector2 currentScreenPos = mainCamera.WorldToScreenPoint(aimTarget.transform.position);
-        GameObject best = null;
-        float bestScore = float.MaxValue;
-
-        foreach (var handler in allTargets)
-        {
-            if (!handler.IsActive) continue;
-
-            GameObject target = handler.gameObject;
-            if (target == aimTarget) continue;
-            if (Vector3.Distance(aimTarget.transform.position, rb.transform.position) > targetSelectionRange) continue;
-
-            Vector2 targetScreenPos = mainCamera.WorldToScreenPoint(target.transform.position);
-            Vector2 dirToTarget = (targetScreenPos - currentScreenPos).normalized;
-
-            float dot = Vector2.Dot(inputDir.normalized, dirToTarget);
-            if (dot < 0.5f) continue;
-
-            float distance = Vector2.Distance(currentScreenPos, targetScreenPos);
-            float score = distance - dot * 1000f;
-
-            if (score < bestScore)
-            {
-                bestScore = score;
-                best = target;
-            }
-        }
-
-        if (best != null)
-        {
-            Debug.Log("Targeting " + best);
-            if (CanSwitchTo(best))
-            {
-                SwitchTarget(best);
-            }
-        }
-    }
-
     private void HandleTargetBroken(TargetCollisionHandler brokenTarget)
     {
-        if (brokenTarget == null || aimTarget != brokenTarget.gameObject) return;
+        if (brokenTarget == null) return;
 
-        RemoveAimTarget();
-    }
-    public GameObject GetAimTarget()
-    {
-        return aimTarget;
-    }
-
-    void SpawnTargetedEffects()
-    {
-        if (targetedEffectsPrefab == null || aimTarget == null) return;
-
-        if (currentEffectsInstance != null)
+        if (aimTarget == brokenTarget.gameObject)
         {
-            Destroy(currentEffectsInstance);
+            ClearAimTarget();
         }
 
-        currentEffectsInstance = Instantiate(targetedEffectsPrefab, aimTarget.transform);
-        currentEffectsInstance.transform.localPosition = Vector3.zero;
+        if (turningTarget == brokenTarget.gameObject)
+        {
+            ClearTurningTarget();
+        }
     }
 
     private void SetAimTarget(GameObject target)
     {
         aimTarget = target;
-        SpawnTargetedEffects();
+        targetFeedback?.ShowAimTargetEffects(aimTarget);
     }
 
     private bool CanSwitchTo(GameObject target)
@@ -253,3 +195,4 @@ public class TargetSelector : MonoBehaviour
         else Gizmos.DrawWireSphere(rb.transform.position, targetSearchRadius);
     }
 }
+

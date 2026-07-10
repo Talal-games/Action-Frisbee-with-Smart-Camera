@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class FlyingState : PlayerState
 {
-    public FlyingState(PlayerStateController player) : base(player) { }
+    public FlyingState(PlayerController player) : base(player) { }
 
     public override void Enter()
     {
         Debug.Log("Entered Flying");
-        player.Throw();
-        player.SaveVel();
-        player.ChooseFlyingCamera();
-        player.ResetSwitchingBuffer();
-        player.SetIsResetted(false);
+        player.ThrowFrisbee();
+        player.ShowFlyingCamera();
+        player.ResetThrowingSwitchBuffer();
+        player.SetSafeResetHandled(false);
     }
 
     public override void ExecuteStateLogic()
     {
-        player.TurnManager();
-        player.AutoChangeElevation();
-        player.FaceVelocity();
-        if (player.GetCurrentThrows > 0)
+        player.UpdateFlightTurn();
+        player.UpdateFlightElevationTowardTarget();
+        player.FaceMovementDirection();
+        if (player.CurrentThrows > 0)
         {
-            player.SwitchToThrowingIfPressing();
+            player.EnterThrowingStateIfJumpHeld();
         }
 
-        player.SlowManager();
+        player.HandleLowSpeedStateTransition();
     }
 }

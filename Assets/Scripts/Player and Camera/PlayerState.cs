@@ -1,10 +1,10 @@
 public abstract class PlayerState
 {
-    protected PlayerStateController player;
+    protected PlayerController player;
     public abstract void ExecuteStateLogic();
 
 
-    public PlayerState(PlayerStateController player)
+    public PlayerState(PlayerController player)
     {
         this.player = player;
     }

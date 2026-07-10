@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AimVisual : MonoBehaviour
 {
+    [Header("Effects (Optional)")]
     [SerializeField] bool useArrow = true;
     [SerializeField] GameObject arrow;
     [SerializeField] Transform arrowModel;
@@ -12,11 +13,12 @@ public class AimVisual : MonoBehaviour
     [SerializeField] Color maxArrowColor = Color.red;
     Vector3 arrowStartScale;
     float aimParticleFullSpeed;
+    ParticleSystem.Particle[] reusableParticles;
 
-    private PlayerStateController player;
+    private PlayerController player;
     void Start()
     {
-        player = GetComponent<PlayerStateController>();
+        player = GetComponent<PlayerController>();
         if (arrow != null)
         {
             arrow.SetActive(useArrow);
@@ -32,14 +34,14 @@ public class AimVisual : MonoBehaviour
             aimParticleFullSpeed = aimParticleSystem.main.startSpeed.constant;
         }
 
-        SetThrowPowerParticles(0f);
+        SetThrowPowerParticleVisibilityAndAlpha(0f);
     }
 
-    public void VisualizeArrow(Vector3 throwDirection, Vector3 referenceDirection, float maxArrowAngle, float curThrowPower, float maxThrowPower)
+    public void UpdateAimVisuals(Vector3 throwDirection, Vector3 referenceDirection, float maxArrowAngle, float curThrowPower, float maxThrowPower)
     {
         if (!useArrow)
         {
-            DisableArrow();
+            SetArrowActive(false);
         }
 
         if (useArrow && arrow != null && arrowModel != null)
@@ -52,30 +54,34 @@ public class AimVisual : MonoBehaviour
             arrowModel.localScale = arrowStartScale * arrowSizeMul;
           //  Debug.Log("arrowSizeMul = " + arrowSizeMul);
 
-            Color arrowColor = arrowMaterial.color;
-            Color.Lerp(arrowColor, maxArrowColor, Mathf.Abs(throwDirection.y/ maxArrowAngle));
-
-            AngleArrow(throwDirection);
+            if (arrowMaterial != null)
+            {
+                Color arrowColor = arrowMaterial.color;
+                arrowMaterial.color = Color.Lerp(arrowColor, maxArrowColor, Mathf.Abs(throwDirection.y / maxArrowAngle));
+            }
         }
+        RotateAimVisuals(throwDirection, referenceDirection);
         UpdateAimParticles(throwDirection, referenceDirection, maxArrowAngle);
-        SetThrowPowerParticles(maxThrowPower > 0f ? Mathf.Clamp01(curThrowPower / maxThrowPower) : 0f);
+        SetThrowPowerParticleVisibilityAndAlpha(maxThrowPower > 0f ? Mathf.Clamp01(curThrowPower / maxThrowPower) : 0f);
     }
 
     private void UpdateAimParticles(Vector3 throwDirection, Vector3 referenceDirection, float maxArrowAngle)
     {
         if (aimParticleSystem == null || maxArrowAngle <= 0f) return;
 
-        Transform rbTransform = player.GetRBTransform();
+        Transform rbTransform = player.GetFrisbeeRigidbodyTransform();
         float aimMultiplier = Mathf.Clamp(
             Vector3.SignedAngle(referenceDirection, throwDirection, rbTransform.up) / maxArrowAngle,
             -1f,
             1f);
 
         ParticleSystem.MainModule main = aimParticleSystem.main;
-        main.startSpeed = aimParticleFullSpeed * aimMultiplier;
+        float targetSpeed = aimParticleFullSpeed * aimMultiplier;
+        main.startSpeed = targetSpeed;
+        ApplySpeedToLiveParticles(aimParticleSystem, targetSpeed);
     }
 
-    private void SetThrowPowerParticles(float throwPower)
+    private void SetThrowPowerParticleVisibilityAndAlpha(float throwPower)
     {
         if (throwPowerParticleSystem == null) return;
 
@@ -89,20 +95,75 @@ public class AimVisual : MonoBehaviour
         Color startColor = main.startColor.color;
         startColor.a = throwPower;
         main.startColor = startColor;
+        ApplyAlphaToLiveParticles(throwPowerParticleSystem, throwPower);
     }
 
-    private void AngleArrow(Vector3 throwDirection)
+    private void ApplyAlphaToLiveParticles(ParticleSystem particleSystem, float alpha)
     {
-        arrow.transform.rotation = Quaternion.LookRotation(throwDirection);
+        int particleCount = GetLiveParticles(particleSystem);
+        for (int i = 0; i < particleCount; i++)
+        {
+            Color32 startColor = reusableParticles[i].startColor;
+            startColor.a = (byte)Mathf.RoundToInt(alpha * 255f);
+            reusableParticles[i].startColor = startColor;
+        }
+
+        particleSystem.SetParticles(reusableParticles, particleCount);
     }
 
-    public void DisableArrow()
+    private void ApplySpeedToLiveParticles(ParticleSystem particleSystem, float speed)
+    {
+        int particleCount = GetLiveParticles(particleSystem);
+        float speedMagnitude = Mathf.Abs(speed);
+        for (int i = 0; i < particleCount; i++)
+        {
+            Vector3 direction = reusableParticles[i].velocity.normalized;
+            if (direction.sqrMagnitude > 0f)
+            {
+                reusableParticles[i].velocity = direction * speedMagnitude;
+            }
+        }
+
+        particleSystem.SetParticles(reusableParticles, particleCount);
+    }
+
+    private int GetLiveParticles(ParticleSystem particleSystem)
+    {
+        int maxParticles = particleSystem.main.maxParticles;
+        if (reusableParticles == null || reusableParticles.Length < maxParticles)
+        {
+            reusableParticles = new ParticleSystem.Particle[maxParticles];
+        }
+
+        return particleSystem.GetParticles(reusableParticles);
+    }
+
+    private void RotateAimVisuals(Vector3 throwDirection, Vector3 referenceDirection)
+    {
+        if (arrow != null && throwDirection.sqrMagnitude > 0.001f)
+        {
+            arrow.transform.rotation = Quaternion.LookRotation(throwDirection);
+        }
+
+        if (aimParticleSystem != null && referenceDirection.sqrMagnitude > 0.001f)
+        {
+            aimParticleSystem.transform.rotation = Quaternion.LookRotation(referenceDirection);
+        }
+    }
+
+    public void HideAimVisuals()
+    {
+        SetArrowActive(false);
+        SetThrowPowerParticleVisibilityAndAlpha(0f);
+    }
+
+    private void SetArrowActive(bool isActive)
     {
         if (arrow != null)
         {
-            arrow.SetActive(false);
+            arrow.SetActive(isActive);
         }
-
-        SetThrowPowerParticles(0f);
     }
 }
+
+

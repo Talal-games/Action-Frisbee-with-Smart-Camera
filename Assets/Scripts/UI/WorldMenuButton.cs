@@ -5,8 +5,12 @@ public class WorldMenuButton : MonoBehaviour
 {
     [SerializeField] private Transform hoveredPosition;
     [SerializeField] private float hoverPosSpeed = 10f;
+
+    [Header("Effects (Optional)")]
     [SerializeField] private GameObject hoverEffects;
     [SerializeField] private ParticleSystem clickParticles;
+
+    [Header("Events")]
     [SerializeField] private UnityEvent onClick;
 
     private Collider[] colliders;
@@ -117,3 +121,5 @@ public class WorldMenuButton : MonoBehaviour
         FrisbeeFmodAudioManager.Instance.PlayOneShot(sound, transform.position);
     }
 }
+
+

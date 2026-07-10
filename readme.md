@@ -1,79 +1,94 @@
-# Physics-Based Frisbee Controller with Dynamic Cinematic Camera
+# Action Frisbee with Smart Camera
 
-## Overview
+A Unity prototype for a physics-based frisbee controller and a dynamic cinematic camera. The player aims in third person, charges a throw, curves the frisbee around obstacles, locks onto targets, and chains throws by hitting targets.
 
-This skill assessment is a small Unity gameplay system extracted from a larger work-in-progress PC frisbee game. The system focuses on a minimal, arcade-style frisbee controller paired with a dynamic camera system that supports both precise aiming and cinematic high-speed movement.
+For the short technical write-up, see [technical_report.md](technical_report.md) or [frisbee_controller_camera_report.pdf](frisbee_controller_camera_report.pdf).
 
-The goal of the system is to capture the feeling of throwing and controlling a frisbee: the player can choose strength and direction, but once the frisbee is released, they must watch and respond as its path curves through space. The mechanic is designed around fast movement, tactile feedback, readable targets, and camera behavior that makes the action feel both skill-based and cinematic.
+## Setup
 
-The system is built around two core parts:
+1. Clone or download this repository from GitHub.
+2. Open the project in Unity Hub using Unity `2022.3.40f1`.
+3. Let Unity import the project and restore packages from `Packages/manifest.json`.
+4. Open `Assets/Scenes/SampleScene.unity`.
+5. If FMOD shows a setup or migration prompt, click through it or ignore it unless you need to modify audio events. The gameplay scripts can still be inspected and tuned.
+6. Press Play.
 
-1. A physics-based frisbee controller with lock-on targeting, charged throws, directional influence, and curved auto-guidance.
-2. A dynamic camera system with an aiming mode and a cinematic “helicopter” mode for high-speed action moments.
+## Controls
 
----
+| Action | Input |
+| --- | --- |
+| Aim camera | Mouse / Cinemachine FreeLook input |
+| Charge throw | Hold `Jump` (`Space` by default) |
+| Throw | Release `Jump` after charging past minimum throw power |
+| Influence throw angle or flight turn | `Horizontal` axis (`A/D` or Left/Right arrows by default) |
+| Start another throw while flying | Hold `Jump` when throws are available |
+| Restart scene | `P` |
 
-## Frisbee Controller
+The project uses Unity's old input manager names, mainly `Jump` and `Horizontal`.
 
-The frisbee controller controls a minimal, action-focused frisbee object. The player locks on to the nearest valid target, charges the strength of the throw, adjusts the throw direction, and releases the frisbee toward the target.
+## Player Flow
 
-The player flow is:
+1. The player moves the camera toward the desired target.
+2. `TargetSelector` chooses the valid target closest to the screen center.
+3. The player holds the action button to charge throw strength.
+4. The player can hold left or right to influence the throw angle.
+5. Releasing the action button launches the frisbee.
+6. While flying, the frisbee can turn and curve toward the stored turning target.
+7. Hitting a target refills throws so the player can continue chaining shots.
 
-1. The system finds or receives a valid target.
-2. The player holds the action button to charge throw strength.
-3. The player can hold left or right to influence the throw direction/curve.
-4. On release, the frisbee is launched.
-5. If the throw is not directly aligned with the target, the frisbee curves and auto-guides back toward it.
+## Main Scripts
 
-The mechanic is inspired by the real feeling of throwing a frisbee. In real life, the thrower controls the strength and initial direction, but the frisbee’s path still curves through the air. I wanted to capture that feeling in a more arcade-like form: the player makes a skillful decision at the moment of release, then watches the path bend and respond.
+| Script | Role |
+| --- | --- |
+| `PlayerInputController` | Reads input and manages input buffers. |
+| `PlayerController` | Coordinates gameplay decisions, state changes, throw count, collisions, cameras, and UI. |
+| `PlayerStateController` | Runs the player state stack. |
+| `ThrowingState`, `FlyingState`, `DeadState` | Decide which systems run during each player mode. |
+| `FrisbeeMovementController` | Owns Rigidbody movement, throw power, turning, curving, and reset tuning. |
+| `TargetSelector` | Chooses aim and turning targets using camera/screen position. |
+| `TargetCollisionHandler` | Represents hittable targets and target-side collision behavior. |
+| `PlayerCameraController` | Switches between third-person aiming and helicopter flight cameras. |
+| `FreeLookVelocityAngleSetter` | Prepares the third-person camera around the frisbee's movement direction. |
+| `HeliCameraDirectionSetter` | Generates, evaluates, and applies cinematic helicopter camera angles. |
+| `PlayerFeedback`, `TargetFeedback`, `AimVisual`, `PlayerStatsUI` | Handle audio, particles, aim visuals, and throw-count UI. |
 
-Important tunable values include:
+## Modularity
 
-* throw strength range
-* curve strength
-* target lock-on range
-* guidance amount
-* speed limits
-* input sensitivity
-* timing values for charge and release
+The player controller and camera are designed as separate but cooperating systems. The player side owns input, state, physics movement, target selection, collisions, and throw count. The camera side reads the frisbee's position and velocity so it can support aiming and cinematic flight without owning the frisbee rules.
 
-The system is designed so these values can be adjusted in the Unity Inspector without rewriting the core code. This makes the mechanic easier to tune for different target layouts, level shapes, and difficulty levels.
+### Using the Player Controller in Another Project
 
----
+Use `Assets/Prefabs/Player and Cameras.prefab` as the fastest starting point. The core player scripts live in `Assets/Scripts/Player and Camera`, with target/collision helpers in `Assets/Scripts/Behaviour`.
 
-## Dynamic Camera System
+The player object expects:
 
-The camera system was developed to solve a central problem in the frisbee game: the game needs both precision and spectacle.
+- A child Rigidbody for the frisbee.
+- `PlayerController`, `PlayerInputController`, `PlayerStateController`, `FrisbeeMovementController`, `TargetSelector`, and `PlayerFeedback`.
+- Target objects using `TargetCollisionHandler`.
+- Collision layers assigned for targets and lethal obstacles.
+- Optional `PlayerStatsUI`, `AimVisual`, `TargetFeedback`, and FMOD audio objects.
 
-One camera mode prioritizes aiming and gives the player a more traditional third-person view. This allows the player to look around, read the space, aim toward targets, and make precise decisions before throwing.
+### Using the Camera in Another Project
 
-The second mode is a cinematic “helicopter view.” This mode uses Cinemachine and custom camera logic to follow the frisbee during high-speed movement. It is designed for gameplay moments where the player has less direct control and the game needs to highlight the motion: big throws, jumps, fast movement, ramps, impacts, or other action events.
+The camera system requires Cinemachine. Use `PlayerCameraController` with a `CinemachineFreeLook` for aiming and a `CinemachineVirtualCamera` for helicopter flight.
 
-The camera system has two main modes:
+The helicopter camera behavior is tuned through `HeliCameraDirectionSetter`. It needs a Rigidbody target, shot-blocking layers, and Cinemachine camera references. It can be reused for another fast-moving object as long as that object exposes a Rigidbody and a clear follow/look-at setup.
 
-### Aiming Mode
+## Important Tunable Values
 
-Aiming mode prioritizes control and readability. It gives the player a stable view for choosing direction, reading targets, and preparing the throw. This mode is closer to a traditional third-person camera because the player needs precision and spatial understanding.
+| Component | Values to tune |
+| --- | --- |
+| `PlayerController` | `startingThrows`, `throwsAddedPerTargetHit`, `collisionThreshold`, target and lethal obstacle layers. |
+| `PlayerInputController` | `jumpBufferTime`, `switchingBufferTime`. |
+| `FrisbeeMovementController` | `angleRate`, `maxAimAngle`, `throwPowerRate`, `minThrowPower`, `maxThrowPower`, `aimAtTargetSpeed`, `turnRate`, `autoTurnThreshold`, `ySpeed`, reset settings. |
+| `TargetSelector` | `targetSearchRadius`, `maxScreenDistanceFromCenter`, `targetSwitchCooldown`, `switchThresholdRatio`. |
+| `HeliCameraDirectionSetter` | `changeInterval`, `rotationSpeed`, `minimumAngleSeparation`, camera distance multipliers, `shotBoxSecondsAhead`, `shotBoxThickness`, `occupancySamples`, `shotBlockLayers`. |
+| `AimVisual` | Arrow usage, arrow scale/color, aim particles, throw-power particles. |
+| `PlayerFeedback` and `TargetFeedback` | Charge light, FMOD sounds, target effects, turning target effects. |
 
-### Cinematic / Helicopter Mode
+## Project Notes
 
-The cinematic mode is designed to follow high-speed action from a more dramatic angle. It uses Cinemachine obstacle avoidance together with custom scripts that decide which side or angle the camera should approach from.
-
-The system exposes important settings in the editor, including:
-
-* camera target
-* camera distance/size
-* transition timing
-* flow/smoothness values
-* obstacle avoidance behavior
-* angle-switch timing
-* randomness
-* stickiness
-
-The custom direction setter chooses possible camera angles and scores them based on obstruction. It can randomly choose a candidate angle, check how obstructed it is, and switch to a better view when appropriate.
-
-“Stickiness” controls how willing the camera is to change angles. Higher stickiness means the camera will stay with its current angle longer and avoid constant switching. Lower stickiness allows the camera to change angles more often when it finds a clearer or more cinematic option.
-
-This camera behavior is important because the frisbee mechanic is not fully readable or playable without the right camera. The system is not just visual presentation; it is part of the gameplay feel.
-
----
+- Main scene: `Assets/Scenes/SampleScene.unity`
+- Main prefab: `Assets/Prefabs/Player and Cameras.prefab`
+- Unity version: `2022.3.40f1`
+- Key packages: Cinemachine, URP, ProBuilder, TextMeshPro, Unity UI, FMOD

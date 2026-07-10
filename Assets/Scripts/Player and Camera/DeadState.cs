@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class DeadState : PlayerState
 {
-    public DeadState(PlayerStateController player) : base(player) { }
+    public DeadState(PlayerController player) : base(player) { }
 
     public override void Enter()
     {
-        player.RemoveRbConstraints();
+        player.ReleaseRigidbodyConstraints();
         Debug.Log("Entered Dead");
-        player.ChooseFlyingCamera();
+        player.ShowFlyingCamera();
     }
 
     public override void ExecuteStateLogic()

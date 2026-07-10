@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FrisbeeCollision : MonoBehaviour
 {
-    PlayerStateController player;
+    private PlayerController player;
     private void Start()
     {
-        player = GetComponentInParent<PlayerStateController>();
+        player = GetComponentInParent<PlayerController>();
     }
     private void OnCollisionEnter(Collision collision)
     {
-        player.OnFrisbeeCollisionEnter(collision.gameObject);
+        player.HandleFrisbeeCollision(collision.gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponentInParent<TargetCollisionHandler>() == null) return;//only send triggers through if theyre from targets
-        player.OnFrisbeeCollisionEnter(other.gameObject);
+        player.HandleFrisbeeCollision(other.gameObject);
     }
 }

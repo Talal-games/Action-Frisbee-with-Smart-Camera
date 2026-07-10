@@ -1,0 +1,206 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 11795 >>
+stream
+BT /F2 14.00 Tf 1 0 0 1 42.00 750.00 Tm (Physics-Based Frisbee Controller with Dynamic Cinematic Camera) Tj ET
+BT /F2 10.50 Tf 1 0 0 1 42.00 722.00 Tm (Overview) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 706.50 Tm (This skill assessment is a small Unity gameplay system) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 696.70 Tm (extracted from a larger work-in-progress PC frisbee game. The) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 686.90 Tm (control system is primarily inspired by Flick Soccer, where the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 677.10 Tm (player aims and shoots quickly, then watches the trajectory and) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 667.30 Tm (impact play out.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 654.00 Tm (My twist was to take that quick aim-and-shoot idea and apply it) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 644.20 Tm (to a frisbee, putting more emphasis on the satisfaction of) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 634.40 Tm (curving around obstacles. The project is built around two) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 624.60 Tm (modular systems:) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 52.00 612.80 Tm (1. A physics-based frisbee controller with lock-on targeting,) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 52.00 603.20 Tm (charged throws, directional influence, and curved) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 52.00 593.60 Tm (auto-guidance.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 52.00 583.00 Tm (2. A dynamic camera system with a precise aiming mode and a) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 52.00 573.40 Tm (cinematic helicopter mode for high-speed action moments.) Tj ET
+BT /F2 10.50 Tf 1 0 0 1 42.00 556.80 Tm (Functional Overview) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 541.30 Tm (The system is designed as a cooperation between the player) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 531.50 Tm (controller, camera system, targets, feedback layer, and level) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 521.70 Tm (structure.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 508.40 Tm (The player controller takes user input and controls the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 498.60 Tm (frisbee's movement: throw power, speed, distance traveled,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 488.80 Tm (turning behavior, and how curving feels. It also manages the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 479.00 Tm (player's flow between throwing, flying, and dead states.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 465.70 Tm (The camera system has two main functions: precise third-person) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 455.90 Tm (aiming and a cinematic helicopter camera for flight. The) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 446.10 Tm (helicopter camera switches between shooting angles and) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 436.30 Tm (distances to keep high-speed movement readable and dramatic. It) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 426.50 Tm (generates possible angles, checks how clear each shot is by) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 416.70 Tm (projecting along the frisbee's future trajectory, then chooses) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 406.90 Tm (a usable view. Designers can tune how often the camera switches) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 397.10 Tm (angles. Camera distance is also adaptive: it increases when the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 387.30 Tm (camera faces away from the flight path so the player stays) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 377.50 Tm (oriented, and it can scale with frisbee speed through an) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 367.70 Tm (exposed multiplier.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 354.40 Tm (Targets provide points that the frisbee can aim toward, lock) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 344.60 Tm (onto, and curve around. They also refill the player's throws,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 334.80 Tm (and can be adapted to trigger level endings, level changes, or) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 325.00 Tm (other programmed events. The feedback layer provides particles,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 315.20 Tm (sounds, UI, and impact responses when prompted by the player,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 305.40 Tm (movement, and target systems.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 292.10 Tm (The level is built from forms, planes, and wide or narrow) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 282.30 Tm (obstacles that vary in elevation, shape, and distance. These) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 272.50 Tm (elements create a course that challenges the player to use the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 262.70 Tm (frisbee's curve, speed, and throw chaining, or to slow down) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 252.90 Tm (depending on the type of challenge.) Tj ET
+BT /F2 10.50 Tf 1 0 0 1 42.00 235.10 Tm (Architectural Overview) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 42.00 217.10 Tm (Input and Player Coordination) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 204.10 Tm (PlayerInputController takes input using Unity's input system) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 194.30 Tm (and manages input buffers, such as throw release and switching) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 184.50 Tm (back into throwing.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 171.20 Tm (PlayerController owns the main gameplay decisions. It reads) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 161.40 Tm (input state, prompts state changes, responds to collisions,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 151.60 Tm (manages throw count, and holds global player settings such as) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 141.80 Tm (starting throws and throws gained from targets.) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 42.00 126.00 Tm (State Flow) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 113.00 Tm (PlayerStateController runs the state machine. It safely exits) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 103.20 Tm (and enters states by popping and pushing them on a state stack,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 93.40 Tm (allowing enter and exit behavior.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 748.50 Tm (ThrowingState, FlyingState, and DeadState decide which systems) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 738.70 Tm (should run every frame. This keeps the player flow readable:) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 728.90 Tm (throwing runs aiming and charging, flying runs turning and) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 719.10 Tm (low-speed checks, and dead releases the frisbee from normal) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 709.30 Tm (control.) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 316.00 693.50 Tm (Frisbee Movement) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 680.50 Tm (FrisbeeMovementController handles the Rigidbody and the main) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 670.70 Tm (frisbee tuning. It applies force for throwing, turning,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 660.90 Tm (curving, vertical adjustment, and reset movement. This is where) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 651.10 Tm (speed, throw power, curve feel, and turning behavior are tuned.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 637.80 Tm (FrisbeeCollision forwards collision and trigger events from the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 628.00 Tm (frisbee object back to the player gameplay layer.) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 316.00 612.20 Tm (Targeting) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 599.20 Tm (TargetSelector uses camera information to create an) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 589.40 Tm (arcade-style lock-on system, choosing the most centered valid) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 579.60 Tm (target on screen. It stores both the aim target and the turning) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 569.80 Tm (target.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 556.50 Tm (TargetCollisionHandler represents targets that can be hit or) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 546.70 Tm (broken. It provides target-side collision and break) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 536.90 Tm (information, which the player and feedback systems can respond) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 527.10 Tm (to, such as refilling throws, clearing targets, or triggering) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 517.30 Tm (level-specific events.) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 316.00 501.50 Tm (Camera) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 488.50 Tm (PlayerCameraController switches between the third-person aiming) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 478.70 Tm (camera and the helicopter camera used during flight.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 468.90 Tm (FreeLookVelocityAngleSetter supports precise aiming by) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 459.10 Tm (preparing the third-person camera around the frisbee's movement) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 449.30 Tm (direction. HeliCameraDirectionSetter generates possible) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 439.50 Tm (helicopter camera angles, evaluates shot clearance along the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 429.70 Tm (frisbee's projected movement, and adjusts camera distance for) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 419.90 Tm (readability at speed.) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 316.00 404.10 Tm (Feedback and UI) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 391.10 Tm (PlayerFeedback owns player-side feedback such as throw sounds,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 381.30 Tm (charge sound, flying sound, and charge light. TargetFeedback) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 371.50 Tm (owns aim target and turning target visual effects. AimVisual) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 361.70 Tm (updates the aiming arrow and throw-power particles.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 351.90 Tm (PlayerStatsUI displays remaining throws by enabling throw icons) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 342.10 Tm (consecutively.) Tj ET
+BT /F2 10.50 Tf 1 0 0 1 316.00 324.30 Tm (Player Flow) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 310.30 Tm (1. The player moves the camera toward the general direction of) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 300.70 Tm (their desired target.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 290.10 Tm (2. The target selector chooses the most centered valid target) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 280.50 Tm (on screen.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 269.90 Tm (3. The player holds the action button to charge throw) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 260.30 Tm (strength.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 249.70 Tm (4. The player can hold left or right to influence the throw) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 240.10 Tm (direction and curve.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 229.50 Tm (5. On release, the frisbee launches.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 218.90 Tm (6. While flying, the frisbee can curve toward the turning) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 209.30 Tm (target if there is enough distance and speed.) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 198.70 Tm (7. Hitting a target refills throws and lets the player) Tj ET
+BT /F1 8.00 Tf 1 0 0 1 326.00 189.10 Tm (continue chaining shots.) Tj ET
+BT /F2 10.50 Tf 1 0 0 1 316.00 172.50 Tm (Key Decisions) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 316.00 154.50 Tm (Live Force-Based Curving) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 141.50 Tm (The frisbee curves toward targets by applying a designer-tuned) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 131.70 Tm (force until its movement aligns with the target. I considered) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 121.90 Tm (other arcing methods, such as calculating the curve beforehand,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 112.10 Tm (but chose this approach because it keeps the frisbee feeling) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 102.30 Tm (physical and responsive. The curve is not pre-baked; the) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 92.50 Tm (frisbee adjusts live. This also creates skill expression:) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 82.70 Tm (players can learn how fast the frisbee curves, use speed and) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 72.90 Tm (throw angle to shape wide arcs, and judge the distance needed) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 316.00 63.10 Tm (to actually hit a target.) Tj ET
+BT /F1 7 Tf 1 0 0 1 296.00 24 Tm (1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 3657 >>
+stream
+BT /F2 8.80 Tf 1 0 0 1 42.00 746.00 Tm (Single State Machine) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 733.00 Tm (The player flow is organized around a single state machine) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 723.20 Tm (instead of many separate rules checking when each behavior is) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 713.40 Tm (allowed. The project could have worked either way, but I chose) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 703.60 Tm (this structure to make the player's current mode explicit:) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 693.80 Tm (throwing, flying, or dead. Each state decides which systems run) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 684.00 Tm (during that mode, which makes behavior easier to reason about) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 674.20 Tm (and avoids scattering condition checks across many scripts. It) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 664.40 Tm (also let me practice using a state stack with safe enter and) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 654.60 Tm (exit behavior.) Tj ET
+BT /F2 8.80 Tf 1 0 0 1 42.00 638.80 Tm (Cinematic Flight Camera) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 625.80 Tm (The cinematic camera went through several iterations. Earlier) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 616.00 Tm (versions used stickiness to avoid too many small angle changes.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 606.20 Tm (The current version instead generates new camera angles within) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 596.40 Tm (timed intervals, while making sure each angle is meaningfully) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 586.60 Tm (different from the previous one. The camera evaluates how open) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 576.80 Tm (each angle is by checking ahead in the frisbee's flight) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 567.00 Tm (direction, then chooses a cleaner view. This is supported by) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 557.20 Tm (Cinemachine obstacle avoidance, which smooths around) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 547.40 Tm (unavoidable obstructions created by the level geometry.) Tj ET
+BT /F2 10.50 Tf 1 0 0 1 42.00 529.60 Tm (Modularity) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 514.10 Tm (The project is organized so the controller and camera can be) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 504.30 Tm (understood as separate but cooperating systems. The controller) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 494.50 Tm (side is split into input, player coordination, state flow,) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 484.70 Tm (movement, targeting, and feedback. This keeps the main player) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 474.90 Tm (rules separate from physics tuning, target selection, and) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 465.10 Tm (presentation.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 451.80 Tm (The camera side is also modular. PlayerCameraController exposes) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 442.00 Tm (a small API for switching camera modes, while the third-person) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 432.20 Tm (aiming camera and helicopter camera behavior are tuned through) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 422.40 Tm (their own scripts and Cinemachine settings. The camera does not) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 412.60 Tm (own the frisbee rules; it reads movement and spatial) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 402.80 Tm (information to support control, readability, and cinematic) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 393.00 Tm (presentation.) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 379.70 Tm (The Git repository contains the Unity project and should) Tj ET
+BT /F1 8.20 Tf 1 0 0 1 42.00 369.90 Tm (include setup instructions for opening and running the project.) Tj ET
+BT /F1 7 Tf 1 0 0 1 296.00 24 Tm (2) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000272 00000 n 
+0000012120 00000 n 
+0000012256 00000 n 
+0000015965 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+16101
+%%EOF

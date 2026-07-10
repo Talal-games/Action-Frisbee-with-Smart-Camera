@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2927680255683612336}
   - component: {fileID: 8190644798999441011}
+  - component: {fileID: 912746631559181234}
   m_Layer: 6
   m_Name: Rock Tower
   m_TagString: Untagged
@@ -47,15 +48,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b3e3f602e27544c8ddc8dbd26a318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchLayerWhenHit: 1
+  activeTargetLayer: 6
+  brokenObstacleLayer: 7
+--- !u!114 &912746631559181234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2612184530376720538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3f8bb84fe84d2b814102c2a88bbf78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   particleEffectPrefab: {fileID: 974170749926081065, guid: 17186403833720e4db5fad1ec248713b,
     type: 3}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  light: {fileID: 4576143964425048437}
+  targetLight: {fileID: 4576143964425048437}
+  playBreakSound: 1
+  releaseChildRigidbodies: 1
 --- !u!1 &2630697609254273245
 GameObject:
   m_ObjectHideFlags: 0
@@ -7067,3 +7079,4 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8950107232374365211}
   m_PrefabAsset: {fileID: 0}
+
