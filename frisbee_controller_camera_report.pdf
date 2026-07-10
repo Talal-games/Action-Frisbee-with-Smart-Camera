@@ -1,206 +1,105 @@
 %PDF-1.4
-%âãÏÓ
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 5 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<<
+/BaseFont /Courier-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
 endobj
 5 0 obj
-<< /Length 11795 >>
-stream
-BT /F2 14.00 Tf 1 0 0 1 42.00 750.00 Tm (Physics-Based Frisbee Controller with Dynamic Cinematic Camera) Tj ET
-BT /F2 10.50 Tf 1 0 0 1 42.00 722.00 Tm (Overview) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 706.50 Tm (This skill assessment is a small Unity gameplay system) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 696.70 Tm (extracted from a larger work-in-progress PC frisbee game. The) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 686.90 Tm (control system is primarily inspired by Flick Soccer, where the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 677.10 Tm (player aims and shoots quickly, then watches the trajectory and) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 667.30 Tm (impact play out.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 654.00 Tm (My twist was to take that quick aim-and-shoot idea and apply it) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 644.20 Tm (to a frisbee, putting more emphasis on the satisfaction of) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 634.40 Tm (curving around obstacles. The project is built around two) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 624.60 Tm (modular systems:) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 52.00 612.80 Tm (1. A physics-based frisbee controller with lock-on targeting,) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 52.00 603.20 Tm (charged throws, directional influence, and curved) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 52.00 593.60 Tm (auto-guidance.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 52.00 583.00 Tm (2. A dynamic camera system with a precise aiming mode and a) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 52.00 573.40 Tm (cinematic helicopter mode for high-speed action moments.) Tj ET
-BT /F2 10.50 Tf 1 0 0 1 42.00 556.80 Tm (Functional Overview) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 541.30 Tm (The system is designed as a cooperation between the player) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 531.50 Tm (controller, camera system, targets, feedback layer, and level) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 521.70 Tm (structure.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 508.40 Tm (The player controller takes user input and controls the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 498.60 Tm (frisbee's movement: throw power, speed, distance traveled,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 488.80 Tm (turning behavior, and how curving feels. It also manages the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 479.00 Tm (player's flow between throwing, flying, and dead states.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 465.70 Tm (The camera system has two main functions: precise third-person) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 455.90 Tm (aiming and a cinematic helicopter camera for flight. The) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 446.10 Tm (helicopter camera switches between shooting angles and) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 436.30 Tm (distances to keep high-speed movement readable and dramatic. It) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 426.50 Tm (generates possible angles, checks how clear each shot is by) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 416.70 Tm (projecting along the frisbee's future trajectory, then chooses) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 406.90 Tm (a usable view. Designers can tune how often the camera switches) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 397.10 Tm (angles. Camera distance is also adaptive: it increases when the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 387.30 Tm (camera faces away from the flight path so the player stays) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 377.50 Tm (oriented, and it can scale with frisbee speed through an) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 367.70 Tm (exposed multiplier.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 354.40 Tm (Targets provide points that the frisbee can aim toward, lock) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 344.60 Tm (onto, and curve around. They also refill the player's throws,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 334.80 Tm (and can be adapted to trigger level endings, level changes, or) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 325.00 Tm (other programmed events. The feedback layer provides particles,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 315.20 Tm (sounds, UI, and impact responses when prompted by the player,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 305.40 Tm (movement, and target systems.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 292.10 Tm (The level is built from forms, planes, and wide or narrow) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 282.30 Tm (obstacles that vary in elevation, shape, and distance. These) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 272.50 Tm (elements create a course that challenges the player to use the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 262.70 Tm (frisbee's curve, speed, and throw chaining, or to slow down) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 252.90 Tm (depending on the type of challenge.) Tj ET
-BT /F2 10.50 Tf 1 0 0 1 42.00 235.10 Tm (Architectural Overview) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 42.00 217.10 Tm (Input and Player Coordination) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 204.10 Tm (PlayerInputController takes input using Unity's input system) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 194.30 Tm (and manages input buffers, such as throw release and switching) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 184.50 Tm (back into throwing.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 171.20 Tm (PlayerController owns the main gameplay decisions. It reads) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 161.40 Tm (input state, prompts state changes, responds to collisions,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 151.60 Tm (manages throw count, and holds global player settings such as) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 141.80 Tm (starting throws and throws gained from targets.) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 42.00 126.00 Tm (State Flow) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 113.00 Tm (PlayerStateController runs the state machine. It safely exits) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 103.20 Tm (and enters states by popping and pushing them on a state stack,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 93.40 Tm (allowing enter and exit behavior.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 748.50 Tm (ThrowingState, FlyingState, and DeadState decide which systems) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 738.70 Tm (should run every frame. This keeps the player flow readable:) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 728.90 Tm (throwing runs aiming and charging, flying runs turning and) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 719.10 Tm (low-speed checks, and dead releases the frisbee from normal) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 709.30 Tm (control.) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 316.00 693.50 Tm (Frisbee Movement) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 680.50 Tm (FrisbeeMovementController handles the Rigidbody and the main) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 670.70 Tm (frisbee tuning. It applies force for throwing, turning,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 660.90 Tm (curving, vertical adjustment, and reset movement. This is where) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 651.10 Tm (speed, throw power, curve feel, and turning behavior are tuned.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 637.80 Tm (FrisbeeCollision forwards collision and trigger events from the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 628.00 Tm (frisbee object back to the player gameplay layer.) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 316.00 612.20 Tm (Targeting) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 599.20 Tm (TargetSelector uses camera information to create an) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 589.40 Tm (arcade-style lock-on system, choosing the most centered valid) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 579.60 Tm (target on screen. It stores both the aim target and the turning) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 569.80 Tm (target.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 556.50 Tm (TargetCollisionHandler represents targets that can be hit or) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 546.70 Tm (broken. It provides target-side collision and break) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 536.90 Tm (information, which the player and feedback systems can respond) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 527.10 Tm (to, such as refilling throws, clearing targets, or triggering) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 517.30 Tm (level-specific events.) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 316.00 501.50 Tm (Camera) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 488.50 Tm (PlayerCameraController switches between the third-person aiming) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 478.70 Tm (camera and the helicopter camera used during flight.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 468.90 Tm (FreeLookVelocityAngleSetter supports precise aiming by) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 459.10 Tm (preparing the third-person camera around the frisbee's movement) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 449.30 Tm (direction. HeliCameraDirectionSetter generates possible) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 439.50 Tm (helicopter camera angles, evaluates shot clearance along the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 429.70 Tm (frisbee's projected movement, and adjusts camera distance for) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 419.90 Tm (readability at speed.) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 316.00 404.10 Tm (Feedback and UI) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 391.10 Tm (PlayerFeedback owns player-side feedback such as throw sounds,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 381.30 Tm (charge sound, flying sound, and charge light. TargetFeedback) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 371.50 Tm (owns aim target and turning target visual effects. AimVisual) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 361.70 Tm (updates the aiming arrow and throw-power particles.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 351.90 Tm (PlayerStatsUI displays remaining throws by enabling throw icons) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 342.10 Tm (consecutively.) Tj ET
-BT /F2 10.50 Tf 1 0 0 1 316.00 324.30 Tm (Player Flow) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 310.30 Tm (1. The player moves the camera toward the general direction of) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 300.70 Tm (their desired target.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 290.10 Tm (2. The target selector chooses the most centered valid target) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 280.50 Tm (on screen.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 269.90 Tm (3. The player holds the action button to charge throw) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 260.30 Tm (strength.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 249.70 Tm (4. The player can hold left or right to influence the throw) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 240.10 Tm (direction and curve.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 229.50 Tm (5. On release, the frisbee launches.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 218.90 Tm (6. While flying, the frisbee can curve toward the turning) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 209.30 Tm (target if there is enough distance and speed.) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 198.70 Tm (7. Hitting a target refills throws and lets the player) Tj ET
-BT /F1 8.00 Tf 1 0 0 1 326.00 189.10 Tm (continue chaining shots.) Tj ET
-BT /F2 10.50 Tf 1 0 0 1 316.00 172.50 Tm (Key Decisions) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 316.00 154.50 Tm (Live Force-Based Curving) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 141.50 Tm (The frisbee curves toward targets by applying a designer-tuned) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 131.70 Tm (force until its movement aligns with the target. I considered) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 121.90 Tm (other arcing methods, such as calculating the curve beforehand,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 112.10 Tm (but chose this approach because it keeps the frisbee feeling) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 102.30 Tm (physical and responsive. The curve is not pre-baked; the) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 92.50 Tm (frisbee adjusts live. This also creates skill expression:) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 82.70 Tm (players can learn how fast the frisbee curves, use speed and) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 72.90 Tm (throw angle to shape wide arcs, and judge the distance needed) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 316.00 63.10 Tm (to actually hit a target.) Tj ET
-BT /F1 7 Tf 1 0 0 1 296.00 24 Tm (1) Tj ET
-endstream
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
 endobj
 6 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+<<
+/Contents 11 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
 endobj
 7 0 obj
-<< /Length 3657 >>
-stream
-BT /F2 8.80 Tf 1 0 0 1 42.00 746.00 Tm (Single State Machine) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 733.00 Tm (The player flow is organized around a single state machine) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 723.20 Tm (instead of many separate rules checking when each behavior is) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 713.40 Tm (allowed. The project could have worked either way, but I chose) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 703.60 Tm (this structure to make the player's current mode explicit:) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 693.80 Tm (throwing, flying, or dead. Each state decides which systems run) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 684.00 Tm (during that mode, which makes behavior easier to reason about) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 674.20 Tm (and avoids scattering condition checks across many scripts. It) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 664.40 Tm (also let me practice using a state stack with safe enter and) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 654.60 Tm (exit behavior.) Tj ET
-BT /F2 8.80 Tf 1 0 0 1 42.00 638.80 Tm (Cinematic Flight Camera) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 625.80 Tm (The cinematic camera went through several iterations. Earlier) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 616.00 Tm (versions used stickiness to avoid too many small angle changes.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 606.20 Tm (The current version instead generates new camera angles within) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 596.40 Tm (timed intervals, while making sure each angle is meaningfully) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 586.60 Tm (different from the previous one. The camera evaluates how open) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 576.80 Tm (each angle is by checking ahead in the frisbee's flight) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 567.00 Tm (direction, then chooses a cleaner view. This is supported by) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 557.20 Tm (Cinemachine obstacle avoidance, which smooths around) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 547.40 Tm (unavoidable obstructions created by the level geometry.) Tj ET
-BT /F2 10.50 Tf 1 0 0 1 42.00 529.60 Tm (Modularity) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 514.10 Tm (The project is organized so the controller and camera can be) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 504.30 Tm (understood as separate but cooperating systems. The controller) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 494.50 Tm (side is split into input, player coordination, state flow,) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 484.70 Tm (movement, targeting, and feedback. This keeps the main player) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 474.90 Tm (rules separate from physics tuning, target selection, and) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 465.10 Tm (presentation.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 451.80 Tm (The camera side is also modular. PlayerCameraController exposes) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 442.00 Tm (a small API for switching camera modes, while the third-person) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 432.20 Tm (aiming camera and helicopter camera behavior are tuned through) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 422.40 Tm (their own scripts and Cinemachine settings. The camera does not) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 412.60 Tm (own the frisbee rules; it reads movement and spatial) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 402.80 Tm (information to support control, readability, and cinematic) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 393.00 Tm (presentation.) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 379.70 Tm (The Git repository contains the Unity project and should) Tj ET
-BT /F1 8.20 Tf 1 0 0 1 42.00 369.90 Tm (include setup instructions for opening and running the project.) Tj ET
-BT /F1 7 Tf 1 0 0 1 296.00 24 Tm (2) Tj ET
-endstream
+<<
+/Contents 12 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
 endobj
 8 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+<<
+/PageMode /UseNone /Pages 10 0 R /Type /Catalog
+>>
+endobj
+9 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20260710152007+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260710152007+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+10 0 obj
+<<
+/Count 2 /Kids [ 6 0 R 7 0 R ] /Type /Pages
+>>
+endobj
+11 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3466
+>>
+stream
+Gatm=?$G$]&q0MX^g"H7'$F'JbaUOsDgOB*gPt$qcO^CSLadp%88InepC71Pfnq@CBhi5D,(RMRSND$b!V>h70X(;'Z+o2&T5OfIK^=02K%Q"7rFbhbql@K7!p4'6ib*&hV<^)J@b0nK.P+61cs'$1MBuEbKk[i%6'-A@Op%iuD#;\H\'EQRPVFh2lN?u>V"Nl[O9Lb,0(E!134p=mb>t;QXhp0r=lcEn^Lm3FG('*-bEC[p/[R]tWr3mKs2sbZU8;14b[Xt8f-k4%:HtT4["nl'SOQYpE8#'gV.l$[dr+_WWf#Uj;K%4rs-;uCh&UahZ;:B@)U?'Q=uC4Q,%PJp+a`arn]K%l/2/F+hgE06b\fWElW=")4$@;K`Bc0^`EPc&R)SF85@F[V,!u6WESs8W*(B50P%a5/lS'@:/(raDQ\J(*@7$''lsr!]#+G^\P0N:n',-k!./$]0T<]ke)j8Ub`6SB"#gI:t>,P\qK`R9j:LAiJ0E<u+]e+!3d,?;sPHOra.%3XTNjE6A*ZXr]P-3TVZeb/-+0=[^!5CrL4shM%H^O!"n6c%YB<ssep/3\`TZIFP1;(Yq5&e13B-l:GgAs-Ra\TU<fD;:IEF@dUD8YsG'PuO&!u@07fnkG(<V*GZeZs)BY/.9Y\j&C;8W-0odpr-!_/`P`N@L@N'W9QB"B]4q*[iOEb6A2g:<^BHo5-VFnG9SXq#e6-GqL$0l$36o"Zu,U'"c+cF:/r,j^C!'<s@'"V-;.ClEF-2>0sSj47Y;e$Z-[=U0g@GWoc-B-P&'S@('XHCV<dOR3X;%c[_[,`b$:P-j>mT(.R?/`cs.b08QnZ",`0+qY(Y=O&EHs!/t!\jUZH[hV.kSm?]MUBeIY@+a@q6Dq<CVG[6X`-<j["qk,NCh6jAdG3km[:iWH.>g(NYTH*Nfk,m-;DE17)=l'2?=Mu0/@;E9u/^I(`#B*l]$ih(60ZAOjag1:UDiY7G'cjO?+JM*7mUi7s&B<&f-"CBCAX8RI.:'HNj\9hoh?4n3@J0VqAZh@=Y"]+&>WXd/kE*cF+QD7$GPH<[nqSN:NcKoF]3tH+I`L"5NB6>..fb"X9jURM@U"#Maq5>F(\nmuGh8tWY*0%0-a0:":01a7S=u2ij/.pn<1GFeO?(L$jfp!,L2R(")HW2-4S9=@CN3D]F'm45=c!6BQF"7iri<V!@ajLmMmfWoHb%laFY1Zn(6Abi,c<;7:(hj"i106`qqJ8o6"Cf'ILN-0rq_Ur0uiXNFQ*+GMX!^r:<>G8D]uLC<TGd4!kD2dU1PCS&a`GOC<dP-;B:n7Qj7usYcS^OBFp77#8`f)(;cnm'W;(Me)bGu>_$-O3%kcnkDE`=H.i%.9q6b-S&'2Oo^kW!nG3da%H2'QBl"qC:aTId\@UGEQ5.FY+#IC$-jZ1^D:Z$s*T<BjiY$p$$,E*&D5p+q(;0lY<KnC@Z0.0G=_A61p=QD.?T>aK*r?E?PT$@?/&$)dc!L1_8EJS=$XL]Q7>@5=jiRFrGbK#JE43Co(F2q@ig4_>N;o*L(]!UuU\-CK]GRV2<CeSn>ZP\,&p13.f8bjK!SJ/[Uk2&[3%fMD6i@oqY0>5/f]:)+S",nb9%suce6;\>m"p">C%.io+al%<e[FZ0:df.K*%],)Tklq!;,@"k7i7[7?LUZ<Aj@d`DQ[F;YnIj`4a+#of$Z`TVbq:Dq1G:!Wt_MWK'.J9c;sF5?dF_.V8=a%2Ss7FrO/J3TBIdQ^2dIWe+JemAF-ObGgg0;=INt]S-FLe'c[NYe@$)mKZnj)]$]BPlPlN@Th+f".n4Y_n@FmGiZj:&=ljT@R<.00p1KII'<h!PFJ.$u-Flj8=j9grODbf4`0mN[Chb646FgnXAS\HEEt5CCU=`*H'?2cD8BPh*P$()+,>8g1Y&%ZT9$t;COK%]fd0b<go7UAP4Fd<9p9[Nn[O_P\*[*lO2MoRmV<W^SNB`MH'6#%="*]lL@\?XWd6LGbRbTsK6e[>JFZNI8)^L_Pc`+u?'7!J_j3"fm4)/SJM%Weh<+D'h'5FZ';/.5Y'fKtWm",.k*tHp3:Qjoq)*]d'rU!*;e7d?CDR*!c?1@I3h]+Ul^O`8^##@6A:<u!=duf+>/Jge:gHB@-IaZEQ5iGQOGj>@NM0pt)9+Q>/K,[=p%5UA@@+#L[H@VK(iC^Un*XP\Y$qA2TWiJM]@:AlN)mhUr+dcYJ%Xc"R[2:F_P[@/_:_*!%&Wr#cTbU$FFj6jgYKbo(#.-`TYHcSRF^!"is!S?__@,M+]nr%P"5$4HVXc4CK;S3EW8e`l6IZd;b]R@]W>;B.lE.Q=_L=P6146jr]kR&NC^%qk913]:7Zr=t7PeA@9MK&Nk8NE;XZ\JAZ8dFV^\&e0rF'4*8Z;p.1')m\S/</lB\C/JQVVTC:(Wrl$)eP;CM$gX)PjFd,1r>n9`+Hf3n$^F:*]H7)U."!6iWQQpZ-j2o[sa5h0+\p3g#gNME#ge#b!3AlC!@7J/Y+Qe-2RIZVj3fn9'C]_\jh7I<el!^VuK,ocg]_-E%N-cXpGd.6pdb7N%>3)Vds=GJPirCA[1]aaI0n>[<^g9Fg[\ArDNDL@ZbJ6.b`#?BnX#/(FjGdgHChjtA^<#&4QO91?as/1P<XF^PGZWuoa"7dP^lXaG%E"R66Qi#R)uh3R@!r/YREl(@A/^-CS8*Ue\SdlFAN@t!:")8ZAAo;sE:OCYZ);'9T)3-:69*il]Klb8FY42&,N6_726@@sILr*`K]b0hQ(h:->'K8/7OosdJ2m%nXaR4iXK]d&'>_(D"bFO?.j00ACKoUkS4B%$!MHIsmlosZ$^LbKr7NdF>,O]>K4(j0CU!#gFqc-oLui!//kK,.p[%b&W'WU`hgo@*2:hu&u>M)r4Cch;&D6%J4N*MLek&!e%^#Un&Y)bsXgUN#U3"-.g15P3i5rU.&XWtp?pO;scB-0OCRKa>#.oObb&.DYq:'q$:@I$$KnCfGCpm-H2s*sXX-<("oXVPYt`16#-?>#^q1N2%4+qF*X*=YSb?ID]Sbb_rZqDF`fL;C'ti)^*Kn78%L4+*fn^RZ=(HCIJ=NVb6@8_j[0Id!_=?LuNO_L!YalIs*(o%PZc\^e]BXI9YLbA*PZ==K6":e2MufSX["_/r"+N^;DW;WE$:g]*dE\$etTmm\M%!]l<Jh%nO))rd0COO,d06`rFG/fG\]6.\_47gVVDOH+D=\XJkHkZg!;`m9;=KY/tr4QF]5EK(WKWoHS'+?^a=6jJ1.:gIuSjNBZo2p?aUMAW<f\AZIpETB,/>ID<T!Lq@$@kBKeMp?`6VYRJ@-cOOR$LY&WZLTL:$nC(V'O/Rn%b`$-hk8>4F4$Z*X7r@Og;%LrXrJ8?C>A?1oRV%k"==*a[1q!cn8]MTmes[,ePePS/&PdC'RLD>Zb'"+K9'(bt?]H;8P8oqR;hUMe"dR_FDIq[cFIiW"?2Yjh\$H>~>endstream
+endobj
+12 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3240
+>>
+stream
+Gau0EgN)=4&q0LUoNSsWS)Ko;nhccQaja(#P?:DJ+VGDB-4):)>1%ftFp#BK@um^M-`J#NB``]GICbmKq"T>Hs",.>n(7'R>l[.rlR`7E(W6)4r4'K;mo9AE.SfnA%UPIA;%SB6?+"o.>PVTsV?%sC`!`msKd?0c0M4]/*4B3]H*KL4?ASVN)0e@DM!2Jd(W"6d_eTHjpc'*)91'5.$6dGSB7?Gg\q00+Kb:VE4!jNRF8/Cq$LSk1%(p-\<t'Q@SQ+`YYl4XgYN\M0?fcaD!\YF-#jBlZdK'N5%P'42=G8^Dd,ZlBf&?Toe2=ndRVUaKp-`"&"LFl91ePVb%);gq^48@mD6tc&]I8W3#T?7.ge12\oW3fE.k_9oR++U%ID![.'MN6HOHJ8m'W6Z=8JHO9b0M1;LC6]@E1uH52QXrJcI14#=5aLm!WW#\cimA="Je:mA!q]>&C$;Y\onZGP5:Eu'XdR7kof`qnhB]f<D!;oHmu?EU6%AQ>LY.oP8sNA4$S'pOJQrO>/Ks92*5d=P^"]_UL[YOA_"&B5$a<1J([=VkmGda@>]qXfPn1[]H*!B2AHHq$!#i*>\VDQ-5t;"TQ"&Tg(NV7MV"SaSJgM:al/4co+K2Pd@kD/G*VU;='fY"S`9R\PRi97=r+sphR'n`hfE9[[^,?-1j[TT;nN[1O%*srJ584<Ps)PQe1db15?P[C./cb*,9Jp3"\O>I'8/$Ip1JKD$g%u[*WO(/*H1HT_\^<bXi7/D#&=\nH;rc%Iq3[tLHnqhbSJg#.Fo9uW*0\6R;MAVr.'+aEdE6-_MueN<ds8?dA*d@BOgMbauNT=B-l;g)P[\aJF5BM^%7$e;D4OOoa47(6a7S24BT;sG^!2>,fi.+c_#f2SpERipbNIE.W\bJjhA]qfF)T).+-;_CWP,=0.L?JUT!5p1hACr^8RFQEVJc.,5$I'R#ebTjH\[eLL_6DH^S#P3beT(=d(lP="s>'=+GVI>/\!BO$`TB#/8o&<pGV5pI6uhg)DYCYjY0l*5]]l:7*41UP=\AMGJ+O\OYjlR5"c*V(_J899+A:N#jbH`B#48-o:JsFq#,1GGLY($HQG[WM`7:Q"&]tqLoa!&WaRgS-N`?MS4DSa/;"`)*4ID-b:OC7Kpna:M2cEeT-.GG+*YYoE=!Qkh\G.;Jn:<Zn@Cn)SO4[JbP;qY@3F,GM'5qi3HdiHUdFkZ@"C,501H]V7N6Y"6>d)'+.@7nR4GRp'Vi]Xh5d9^Qd.)F%-\ee%A-X,k=PRV&nuAUc)$l*H3lW`+V4FNYp"CZs4D<p?`4r7HK`4M0jA4UGL<"A6f[IG7iU%`o%@PLB;a9k>5uSipG#jkO"1`5=5BCfb^9cY@+K?&Sf&!\0t0Qn&[]>DX3l-Im9(;cH8/./Re;:Oh\]i%!aj_3chts8jCYYj=,HUe)L.WXc;I%bE`?If!j-;HRIr=Y<-q$H1kdJ#nq7=kF\Z"qNUQ#<<?Aba4&)o;s^U75>cGr-r\cEK<qZ+=T;sIX6)<Wa^6^fb9B1D,6*R$U$O4Xr%*f3Uc[;+p_LnO4YdtQ@a0l7Xip96V]`P/'g3oM4'&.0=J*&]bTed.m/;=#q_paT%lB]1"nt264j>\$in*LJh]obNSQ#d-rLVF3p(juKd1/@@8J"<M`_U^VC^?XRI[;4KoAY)0b\kR>4f,TH[I%1#f3'fC1l5QQHgZu"Db],`)-\j&H44g'_CUF!jIk>qkZ]-UH>LAP=RY3p:R`.V;4Im[J=7VIXGN8i_$1jlJcn$f<"aQBnKQjs0Xf^>X,F](At1Fn6oQ*niYA6^)ED>GZmt-4RQiYIVBj&P2S<EW:8@7H^j2iEW1OQ/]5P<jXu^6I12Z#$XufN"$aHi):,^tb/uC`NI;_(2JX>77Q'638X,#0";6Ar].F)gS@^Ol6r\n/Y.<3*C:o8(qU'Zu2ANq]fYUqON7J;Ho#&XD\[L6hia:>4<6b6_ILHQ)+k^Di1P7N)PZb/+pYN]GQpJE"YTgJLYZOKnK+R90HlS"1aKf+GXG7MAq=@LEZC6?N@(I[5Y^d=a23F!#H^TFKef1>Qrer'KioA+kJJT_rIdWci'S`\Q7BS3WQFfZ$f&(gpB>XPBf*_.0NUqCqS:6PL3\%l9-=6rdlCLIk``?V]#\>I3:=i[JT5fU*\D_ONp2>et!H(tYaN@\`@0Fqqr#kP/k+A7kB=\@t[)+sdgoJj:[`3P;4"88"Q^E(\47\_^*\AL':F/!Of2UT.4R%CFs[R-Wo;.IP"?(>bBDiWJ74\C92Ub3LdGO/@)[\^4!PB@j+VGL0+le:#4Kb>ES'"g"9M*u,]H_=<eMc,8XNX2auo^?8a\)g;i/I1$l>M/G[&JCkuk95tB\JI]<\Ne&$C9TB-37unBo?9OD<$]`k,X26+<(*u-7c>4e'U);0ppR(7UKjPU8Fo??fI!d/6b>6cCJ$'V;rmHXbMR1>WpqPA!gZ;LM;o#[#BBf?K0XD!39if`*A%MNHE@qjq!6o,$%::.%pH\3?KrP"?JpJ\)H94'n8\0=_R[.8,\F5sGR.j`c]a6E(i;7-SnQm1o`=CEG0;K&[RrFfO,@HHoWpg9NbmbJR?rh&"!G4\&6K7F.kR0MFTY`7p6"3%4%HbOSl%RE*4?MuVt#rOXY*h8L>_r[]p=r&/VMLp.+>#d.r0/mYX-0DKSW2piN=,VjKHTZfsgBDg98q5W`\7oF(/k3$6iD`bb,m7-F%8]T@fr5\Xqkg2WspL\!XqO&t9IZbi,Ye-s_+<HtcZK`L`]l6eS\)4sh>PBXU-o5%P]KborLRVq=g%LOGOZ!0u&C:#pBF8P)T5jnc-RSe#Nq$a>Oe<'hgDbU3uJ2",V$\XDSh.9.g#k&S]]=JF)$46GA.CG@C#:mE'qYX92[%drO:$a&DX3K?6MHS!6C8%1J,[r1nDmTuu$,`^S4<.c3>K6T;o@?Pk,pr(,5_^bD40KrcQ^MMr?5l^%Wb?0bI^5I3AYOSS"4+j4bfQ''ao?FK-BL3P"Ke:#Y&_Ts&E\U3oTD:,5r&:m[8RU&sf\'eG(:X"$qt?9Bm?Pj-V7@Ukos2T_"]9<pgs\tf9t!ctmq@BI:G25I[&E_T^^eft7gIG96Q2F\[c_haEWj[Xo8Be2_af<84YKJr=q:c#Kr&D<Z$`:qr+&OAcjM)K_:jEaF#2;f/U_g]Mp]qhUQU%"r);*nBmni^Q?C7EDGu;"b`^N9,dr[!39gr3T@sfWrs-E]+%-~>endstream
 endobj
 xref
-0 9
+0 13
 0000000000 65535 f 
-0000000015 00000 n 
-0000000064 00000 n 
-0000000127 00000 n 
-0000000197 00000 n 
-0000000272 00000 n 
-0000012120 00000 n 
-0000012256 00000 n 
-0000015965 00000 n 
+0000000061 00000 n 
+0000000122 00000 n 
+0000000229 00000 n 
+0000000339 00000 n 
+0000000451 00000 n 
+0000000566 00000 n 
+0000000771 00000 n 
+0000000976 00000 n 
+0000001045 00000 n 
+0000001325 00000 n 
+0000001391 00000 n 
+0000004949 00000 n 
 trailer
-<< /Size 9 /Root 1 0 R >>
+<<
+/ID 
+[<ba8d86d3600dd92a5ccfc7d4fc083b9d><ba8d86d3600dd92a5ccfc7d4fc083b9d>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 9 0 R
+/Root 8 0 R
+/Size 13
+>>
 startxref
-16101
+8281
 %%EOF

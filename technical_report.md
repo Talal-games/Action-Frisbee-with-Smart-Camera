@@ -1,4 +1,4 @@
-# Physics-Based Frisbee Controller with Dynamic Cinematic Camera
+# Action Frisbee with Smart Camera
 
 ## Overview
 
