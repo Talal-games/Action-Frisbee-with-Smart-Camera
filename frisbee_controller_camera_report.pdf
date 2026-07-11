@@ -1,105 +1,387 @@
 %PDF-1.4
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R /F3 4 0 R /F4 5 0 R
+/Producer (pypdf)
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Type /Pages
+/Count 2
+/Kids [ 4 0 R 12 0 R ]
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Courier-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Type /Catalog
+/Pages 2 0 R
 >>
 endobj
 4 0 obj
 <<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+/Contents 5 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 7 0 R
+/F2 8 0 R
+/F2-0 9 0 R
+/F3 10 0 R
+/F4 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ 15 0 R ]
+/Parent 2 0 R
 >>
 endobj
 5 0 obj
 <<
-/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+/Length 9226
 >>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 .945098 .784314 rg
+n 0 722.8346 595.2756 119.0551 re f*
+.898039 .545098 .180392 rg
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 62.3622 793.7008 Tm (Skill Assessment) Tj T* ET
+.478431 .243137 .031373 rg
+BT /F3 19 Tf 22.8 TL ET
+BT 1 0 0 1 62.3622 766.7717 Tm (Action Frisbee With Smart Camera Report) Tj T* ET
+.478431 .243137 .031373 rg
+BT /F2 8 Tf 9.6 TL ET
+BT 1 0 0 1 62.3622 746.9291 Tm (TALAL ALKHALAF) Tj T* ET
+.894118 .784314 .635294 RG
+.4 w
+n 62.3622 41.35433 m 538.5827 41.35433 l S
+.72549 .509804 .352941 rg
+BT /F1 7 Tf 8.4 TL ET
+BT 1 0 0 1 534.6907 32.35433 Tm (1) Tj T* ET
+Q
+q
+1 0 0 1 62.3622 687.7921 cm
+q
+.898039 .545098 .180392 rg
+BT 1 0 0 1 0 2 Tm /F2 13.2 Tf 15.2 TL (Overview) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 610.5761 cm
+q
+BT 1 0 0 1 0 62.016 Tm 12.036 TL /F1 10.2 Tf .066667 .066667 .066667 rg (This skill assessment is a small Unity gameplay) Tj T* (system extracted from a larger work-in-progress) Tj T* (PC frisbee game. The control system is primarily) Tj T* (inspired by ) Tj /F4 10.2 Tf (Flick Soccer) Tj /F1 10.2 Tf (, where the player aims) Tj T* (and shoots quickly, then watches the trajectory) Tj T* (and impact play out.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 556.8321 cm
+q
+.066667 .066667 .066667 rg
+BT 1 0 0 1 0 37.944 Tm /F1 10.2 Tf 12.036 TL -0.139593 Tw (My twist was to take that quick aim-and-shoot idea) Tj T* 0 Tw (and apply it to a frisbee, putting more emphasis) Tj T* (on the satisfaction of curving around obstacles.) Tj T* (The project is built around two modular systems:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 515.1241 cm
+q
+BT 1 0 0 1 9 25.908 Tm -7 0 Td 12.036 TL /F3 10.2 Tf .066667 .066667 .066667 rg (1. A physics-based frisbee controller) Tj /F1 10.2 Tf ( with) Tj T* 7 0 Td (lock-on targeting, charged throws, directional) Tj T* (influence, and curved auto-guidance.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 476.5161 cm
+q
+BT 1 0 0 1 9 25.908 Tm -7 0 Td 12.036 TL /F3 10.2 Tf .066667 .066667 .066667 rg (2. A dynamic camera system) Tj /F1 10.2 Tf ( with a precise) Tj T* 7 0 Td (aiming mode and a cinematic helicopter mode) Tj T* (for high-speed action moments.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 453.3161 cm
+q
+.898039 .545098 .180392 rg
+BT 1 0 0 1 0 2 Tm /F2 13.2 Tf 15.2 TL (Functional Overview) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 412.2081 cm
+q
+.066667 .066667 .066667 rg
+BT 1 0 0 1 0 25.908 Tm /F1 10.2 Tf 12.036 TL -0.000707 Tw (The system is designed as a cooperation between) Tj T* 0 Tw (the player controller, camera system, targets,) Tj T* (feedback layer, and level structure.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 346.4281 cm
+q
+BT 1 0 0 1 0 49.98 Tm 12.036 TL /F3 10.2 Tf .898039 .545098 .180392 rg (The player controller) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( takes user input and) Tj T* (controls the frisbee's movement: throw power,) Tj T* (speed, distance traveled, turning behavior, and) Tj T* (how curving feels. It also manages the player's) Tj T* (flow between throwing, flying, and dead states.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 172.3241 cm
+q
+BT 1 0 0 1 0 158.304 Tm 12.036 TL /F3 10.2 Tf .898039 .545098 .180392 rg (The camera system) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( has two main functions:) Tj T* (precise third-person aiming and a cinematic) Tj T* -0.090924 Tw (helicopter camera for flight. The helicopter camera) Tj T* 0 Tw (switches between shooting angles and distances) Tj T* (to keep high-speed movement readable and) Tj T* (dramatic. It generates possible angles, checks) Tj T* (how clear each shot is by projecting along the) Tj T* (frisbee's future trajectory, then chooses a usable) Tj T* (view. Designers can tune how often the camera) Tj T* (switches angles. Camera distance is also) Tj T* (adaptive: it increases when the camera faces) Tj T* (away from the flight path so the player stays) Tj T* (oriented, and it can scale with frisbee speed) Tj T* (through an exposed multiplier.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.3622 70.43613 cm
+q
+BT 1 0 0 1 0 86.088 Tm 12.036 TL /F3 10.2 Tf .898039 .545098 .180392 rg (Targets) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( provide points that the frisbee can aim) Tj T* (toward, lock onto, and curve around. They also) Tj T* (refill the player's throws, and can be adapted to) Tj T* (trigger level endings, level changes, or other) Tj T* (programmed events. The feedback layer provides) Tj T* (particles, sounds, UI, and impact responses when) Tj T* (prompted by the player, movement, and target) Tj T* (systems.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 630.7761 cm
+q
+BT 1 0 0 1 0 62.016 Tm 12.036 TL /F3 10.2 Tf .898039 .545098 .180392 rg (The level) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( is built from forms, planes, and wide or) Tj T* (narrow obstacles that vary in elevation, shape,) Tj T* (and distance. These elements create a course) Tj T* (that challenges the player to use the frisbee's) Tj T* (curve, speed, and throw chaining, or to slow down) Tj T* (depending on the type of challenge.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 607.5761 cm
+q
+.898039 .545098 .180392 rg
+BT 1 0 0 1 0 2 Tm /F2 13.2 Tf 15.2 TL (Architectural Overview) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 592.3761 cm
+q
+.478431 .243137 .031373 rg
+BT 1 0 0 1 0 1.4 Tm /F3 8.8 Tf 10.2 TL (Input and Player Coordination) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 542.2321 cm
+q
+BT 1 0 0 1 0 37.944 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (PlayerInputController) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( takes input using) Tj T* (Unity's input system and manages input buffers,) Tj T* (such as throw release and switching back into) Tj T* (throwing.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 476.4521 cm
+q
+BT 1 0 0 1 0 49.98 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (PlayerController) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( owns the main gameplay) Tj T* (decisions. It reads input state, prompts state) Tj T* (changes, responds to collisions, manages throw) Tj T* (count, and holds global player settings such as) Tj T* (starting throws and throws gained from targets.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 460.6521 cm
+q
+.478431 .243137 .031373 rg
+BT 1 0 0 1 0 1.4 Tm /F3 8.8 Tf 10.2 TL (State Flow) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 410.5081 cm
+q
+BT 1 0 0 1 0 37.944 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (PlayerStateController) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( runs the state) Tj T* (machine. It safely exits and enters states by) Tj T* (popping and pushing them on a state stack,) Tj T* (allowing enter and exit behavior.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 344.7281 cm
+q
+BT 1 0 0 1 0 49.98 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (ThrowingState) Tj /F1 10.2 Tf .066667 .066667 .066667 rg (, ) Tj /F2 10.2 Tf .070588 .435294 .717647 rg (FlyingState) Tj /F1 10.2 Tf .066667 .066667 .066667 rg (, and) Tj T* /F2 10.2 Tf .070588 .435294 .717647 rg (DeadState) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( decide which systems should run) Tj T* (every frame. Throwing runs aiming and charging,) Tj T* (flying runs turning and low-speed checks, and) Tj T* (dead releases the frisbee from normal control.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 328.9281 cm
+q
+.478431 .243137 .031373 rg
+BT 1 0 0 1 0 1.4 Tm /F3 8.8 Tf 10.2 TL (Frisbee Movement) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 254.7121 cm
+q
+BT 1 0 0 1 0 62.016 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (FrisbeeMovementController) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( handles the) Tj T* (Rigidbody and the main frisbee tuning. It applies) Tj T* (force for throwing, turning, curving, vertical) Tj T* (adjustment, and reset movement. This is where) Tj T* (speed, throw power, curve feel, and turning) Tj T* (behavior are tuned.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 213.0041 cm
+q
+BT 1 0 0 1 0 25.908 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (FrisbeeCollision) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( forwards collision and) Tj T* (trigger events from the frisbee object back to the) Tj T* (player gameplay layer.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 197.2041 cm
+q
+.478431 .243137 .031373 rg
+BT 1 0 0 1 0 1.4 Tm /F3 8.8 Tf 10.2 TL (Targeting) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 147.0601 cm
+q
+BT 1 0 0 1 0 37.944 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (TargetSelector) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( uses camera information to) Tj T* (create an arcade-style lock-on system, choosing) Tj T* (the most centered valid target on screen. It stores) Tj T* (both the aim target and the turning target.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 311.811 69.24413 cm
+q
+BT 1 0 0 1 0 62.016 Tm 12.036 TL /F2 10.2 Tf .070588 .435294 .717647 rg (TargetCollisionHandler) Tj /F1 10.2 Tf .066667 .066667 .066667 rg ( represents targets) Tj T* (that can be hit or broken. It provides target-side) Tj T* (collision and break information, which the player) Tj T* (and feedback systems can respond to, such as) Tj T* (refilling throws, clearing targets, or triggering) Tj T* (level-specific events.) Tj T* ET
+Q
+Q
+ 
+
+Q
+
+q
+0.0 0.0 595.2756 841.8898 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+0.478431 0.247059 0.066667 rg
+BT
+/F2-0 7.5 Tf
+9 TL
+ET
+BT
+1 0 0 1 486.1675 812 Tm
+(GitHub Repo) Tj
+T*
+ET
+0.086275 0.466667 0.741176 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 347.242 801 Tm
+(github\056com\057Talal\055games\057Action\055Frisbee\055with\055Smart\055Camera) Tj
+T*
+ET
+Q
+
+
+endstream
 endobj
 6 0 obj
 <<
-/Contents 11 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 7 0 obj
 <<
-/Contents 12 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 8 0 obj
 <<
-/PageMode /UseNone /Pages 10 0 R /Type /Catalog
+/BaseFont /Courier-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 9 0 obj
 <<
-/Author (\(anonymous\)) /CreationDate (D:20260710152007+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260710152007+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 10 0 obj
 <<
-/Count 2 /Kids [ 6 0 R 7 0 R ] /Type /Pages
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 11 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 3466
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F4
+/Subtype /Type1
+/Type /Font
 >>
-stream
-Gatm=?$G$]&q0MX^g"H7'$F'JbaUOsDgOB*gPt$qcO^CSLadp%88InepC71Pfnq@CBhi5D,(RMRSND$b!V>h70X(;'Z+o2&T5OfIK^=02K%Q"7rFbhbql@K7!p4'6ib*&hV<^)J@b0nK.P+61cs'$1MBuEbKk[i%6'-A@Op%iuD#;\H\'EQRPVFh2lN?u>V"Nl[O9Lb,0(E!134p=mb>t;QXhp0r=lcEn^Lm3FG('*-bEC[p/[R]tWr3mKs2sbZU8;14b[Xt8f-k4%:HtT4["nl'SOQYpE8#'gV.l$[dr+_WWf#Uj;K%4rs-;uCh&UahZ;:B@)U?'Q=uC4Q,%PJp+a`arn]K%l/2/F+hgE06b\fWElW=")4$@;K`Bc0^`EPc&R)SF85@F[V,!u6WESs8W*(B50P%a5/lS'@:/(raDQ\J(*@7$''lsr!]#+G^\P0N:n',-k!./$]0T<]ke)j8Ub`6SB"#gI:t>,P\qK`R9j:LAiJ0E<u+]e+!3d,?;sPHOra.%3XTNjE6A*ZXr]P-3TVZeb/-+0=[^!5CrL4shM%H^O!"n6c%YB<ssep/3\`TZIFP1;(Yq5&e13B-l:GgAs-Ra\TU<fD;:IEF@dUD8YsG'PuO&!u@07fnkG(<V*GZeZs)BY/.9Y\j&C;8W-0odpr-!_/`P`N@L@N'W9QB"B]4q*[iOEb6A2g:<^BHo5-VFnG9SXq#e6-GqL$0l$36o"Zu,U'"c+cF:/r,j^C!'<s@'"V-;.ClEF-2>0sSj47Y;e$Z-[=U0g@GWoc-B-P&'S@('XHCV<dOR3X;%c[_[,`b$:P-j>mT(.R?/`cs.b08QnZ",`0+qY(Y=O&EHs!/t!\jUZH[hV.kSm?]MUBeIY@+a@q6Dq<CVG[6X`-<j["qk,NCh6jAdG3km[:iWH.>g(NYTH*Nfk,m-;DE17)=l'2?=Mu0/@;E9u/^I(`#B*l]$ih(60ZAOjag1:UDiY7G'cjO?+JM*7mUi7s&B<&f-"CBCAX8RI.:'HNj\9hoh?4n3@J0VqAZh@=Y"]+&>WXd/kE*cF+QD7$GPH<[nqSN:NcKoF]3tH+I`L"5NB6>..fb"X9jURM@U"#Maq5>F(\nmuGh8tWY*0%0-a0:":01a7S=u2ij/.pn<1GFeO?(L$jfp!,L2R(")HW2-4S9=@CN3D]F'm45=c!6BQF"7iri<V!@ajLmMmfWoHb%laFY1Zn(6Abi,c<;7:(hj"i106`qqJ8o6"Cf'ILN-0rq_Ur0uiXNFQ*+GMX!^r:<>G8D]uLC<TGd4!kD2dU1PCS&a`GOC<dP-;B:n7Qj7usYcS^OBFp77#8`f)(;cnm'W;(Me)bGu>_$-O3%kcnkDE`=H.i%.9q6b-S&'2Oo^kW!nG3da%H2'QBl"qC:aTId\@UGEQ5.FY+#IC$-jZ1^D:Z$s*T<BjiY$p$$,E*&D5p+q(;0lY<KnC@Z0.0G=_A61p=QD.?T>aK*r?E?PT$@?/&$)dc!L1_8EJS=$XL]Q7>@5=jiRFrGbK#JE43Co(F2q@ig4_>N;o*L(]!UuU\-CK]GRV2<CeSn>ZP\,&p13.f8bjK!SJ/[Uk2&[3%fMD6i@oqY0>5/f]:)+S",nb9%suce6;\>m"p">C%.io+al%<e[FZ0:df.K*%],)Tklq!;,@"k7i7[7?LUZ<Aj@d`DQ[F;YnIj`4a+#of$Z`TVbq:Dq1G:!Wt_MWK'.J9c;sF5?dF_.V8=a%2Ss7FrO/J3TBIdQ^2dIWe+JemAF-ObGgg0;=INt]S-FLe'c[NYe@$)mKZnj)]$]BPlPlN@Th+f".n4Y_n@FmGiZj:&=ljT@R<.00p1KII'<h!PFJ.$u-Flj8=j9grODbf4`0mN[Chb646FgnXAS\HEEt5CCU=`*H'?2cD8BPh*P$()+,>8g1Y&%ZT9$t;COK%]fd0b<go7UAP4Fd<9p9[Nn[O_P\*[*lO2MoRmV<W^SNB`MH'6#%="*]lL@\?XWd6LGbRbTsK6e[>JFZNI8)^L_Pc`+u?'7!J_j3"fm4)/SJM%Weh<+D'h'5FZ';/.5Y'fKtWm",.k*tHp3:Qjoq)*]d'rU!*;e7d?CDR*!c?1@I3h]+Ul^O`8^##@6A:<u!=duf+>/Jge:gHB@-IaZEQ5iGQOGj>@NM0pt)9+Q>/K,[=p%5UA@@+#L[H@VK(iC^Un*XP\Y$qA2TWiJM]@:AlN)mhUr+dcYJ%Xc"R[2:F_P[@/_:_*!%&Wr#cTbU$FFj6jgYKbo(#.-`TYHcSRF^!"is!S?__@,M+]nr%P"5$4HVXc4CK;S3EW8e`l6IZd;b]R@]W>;B.lE.Q=_L=P6146jr]kR&NC^%qk913]:7Zr=t7PeA@9MK&Nk8NE;XZ\JAZ8dFV^\&e0rF'4*8Z;p.1')m\S/</lB\C/JQVVTC:(Wrl$)eP;CM$gX)PjFd,1r>n9`+Hf3n$^F:*]H7)U."!6iWQQpZ-j2o[sa5h0+\p3g#gNME#ge#b!3AlC!@7J/Y+Qe-2RIZVj3fn9'C]_\jh7I<el!^VuK,ocg]_-E%N-cXpGd.6pdb7N%>3)Vds=GJPirCA[1]aaI0n>[<^g9Fg[\ArDNDL@ZbJ6.b`#?BnX#/(FjGdgHChjtA^<#&4QO91?as/1P<XF^PGZWuoa"7dP^lXaG%E"R66Qi#R)uh3R@!r/YREl(@A/^-CS8*Ue\SdlFAN@t!:")8ZAAo;sE:OCYZ);'9T)3-:69*il]Klb8FY42&,N6_726@@sILr*`K]b0hQ(h:->'K8/7OosdJ2m%nXaR4iXK]d&'>_(D"bFO?.j00ACKoUkS4B%$!MHIsmlosZ$^LbKr7NdF>,O]>K4(j0CU!#gFqc-oLui!//kK,.p[%b&W'WU`hgo@*2:hu&u>M)r4Cch;&D6%J4N*MLek&!e%^#Un&Y)bsXgUN#U3"-.g15P3i5rU.&XWtp?pO;scB-0OCRKa>#.oObb&.DYq:'q$:@I$$KnCfGCpm-H2s*sXX-<("oXVPYt`16#-?>#^q1N2%4+qF*X*=YSb?ID]Sbb_rZqDF`fL;C'ti)^*Kn78%L4+*fn^RZ=(HCIJ=NVb6@8_j[0Id!_=?LuNO_L!YalIs*(o%PZc\^e]BXI9YLbA*PZ==K6":e2MufSX["_/r"+N^;DW;WE$:g]*dE\$etTmm\M%!]l<Jh%nO))rd0COO,d06`rFG/fG\]6.\_47gVVDOH+D=\XJkHkZg!;`m9;=KY/tr4QF]5EK(WKWoHS'+?^a=6jJ1.:gIuSjNBZo2p?aUMAW<f\AZIpETB,/>ID<T!Lq@$@kBKeMp?`6VYRJ@-cOOR$LY&WZLTL:$nC(V'O/Rn%b`$-hk8>4F4$Z*X7r@Og;%LrXrJ8?C>A?1oRV%k"==*a[1q!cn8]MTmes[,ePePS/&PdC'RLD>Zb'"+K9'(bt?]H;8P8oqR;hUMe"dR_FDIq[cFIiW"?2Yjh\$H>~>endstream
 endobj
 12 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 3240
+/Contents 13 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Resources <<
+/Font 14 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Parent 2 0 R
+>>
+endobj
+13 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ]
+/Length 3240
 >>
 stream
-Gau0EgN)=4&q0LUoNSsWS)Ko;nhccQaja(#P?:DJ+VGDB-4):)>1%ftFp#BK@um^M-`J#NB``]GICbmKq"T>Hs",.>n(7'R>l[.rlR`7E(W6)4r4'K;mo9AE.SfnA%UPIA;%SB6?+"o.>PVTsV?%sC`!`msKd?0c0M4]/*4B3]H*KL4?ASVN)0e@DM!2Jd(W"6d_eTHjpc'*)91'5.$6dGSB7?Gg\q00+Kb:VE4!jNRF8/Cq$LSk1%(p-\<t'Q@SQ+`YYl4XgYN\M0?fcaD!\YF-#jBlZdK'N5%P'42=G8^Dd,ZlBf&?Toe2=ndRVUaKp-`"&"LFl91ePVb%);gq^48@mD6tc&]I8W3#T?7.ge12\oW3fE.k_9oR++U%ID![.'MN6HOHJ8m'W6Z=8JHO9b0M1;LC6]@E1uH52QXrJcI14#=5aLm!WW#\cimA="Je:mA!q]>&C$;Y\onZGP5:Eu'XdR7kof`qnhB]f<D!;oHmu?EU6%AQ>LY.oP8sNA4$S'pOJQrO>/Ks92*5d=P^"]_UL[YOA_"&B5$a<1J([=VkmGda@>]qXfPn1[]H*!B2AHHq$!#i*>\VDQ-5t;"TQ"&Tg(NV7MV"SaSJgM:al/4co+K2Pd@kD/G*VU;='fY"S`9R\PRi97=r+sphR'n`hfE9[[^,?-1j[TT;nN[1O%*srJ584<Ps)PQe1db15?P[C./cb*,9Jp3"\O>I'8/$Ip1JKD$g%u[*WO(/*H1HT_\^<bXi7/D#&=\nH;rc%Iq3[tLHnqhbSJg#.Fo9uW*0\6R;MAVr.'+aEdE6-_MueN<ds8?dA*d@BOgMbauNT=B-l;g)P[\aJF5BM^%7$e;D4OOoa47(6a7S24BT;sG^!2>,fi.+c_#f2SpERipbNIE.W\bJjhA]qfF)T).+-;_CWP,=0.L?JUT!5p1hACr^8RFQEVJc.,5$I'R#ebTjH\[eLL_6DH^S#P3beT(=d(lP="s>'=+GVI>/\!BO$`TB#/8o&<pGV5pI6uhg)DYCYjY0l*5]]l:7*41UP=\AMGJ+O\OYjlR5"c*V(_J899+A:N#jbH`B#48-o:JsFq#,1GGLY($HQG[WM`7:Q"&]tqLoa!&WaRgS-N`?MS4DSa/;"`)*4ID-b:OC7Kpna:M2cEeT-.GG+*YYoE=!Qkh\G.;Jn:<Zn@Cn)SO4[JbP;qY@3F,GM'5qi3HdiHUdFkZ@"C,501H]V7N6Y"6>d)'+.@7nR4GRp'Vi]Xh5d9^Qd.)F%-\ee%A-X,k=PRV&nuAUc)$l*H3lW`+V4FNYp"CZs4D<p?`4r7HK`4M0jA4UGL<"A6f[IG7iU%`o%@PLB;a9k>5uSipG#jkO"1`5=5BCfb^9cY@+K?&Sf&!\0t0Qn&[]>DX3l-Im9(;cH8/./Re;:Oh\]i%!aj_3chts8jCYYj=,HUe)L.WXc;I%bE`?If!j-;HRIr=Y<-q$H1kdJ#nq7=kF\Z"qNUQ#<<?Aba4&)o;s^U75>cGr-r\cEK<qZ+=T;sIX6)<Wa^6^fb9B1D,6*R$U$O4Xr%*f3Uc[;+p_LnO4YdtQ@a0l7Xip96V]`P/'g3oM4'&.0=J*&]bTed.m/;=#q_paT%lB]1"nt264j>\$in*LJh]obNSQ#d-rLVF3p(juKd1/@@8J"<M`_U^VC^?XRI[;4KoAY)0b\kR>4f,TH[I%1#f3'fC1l5QQHgZu"Db],`)-\j&H44g'_CUF!jIk>qkZ]-UH>LAP=RY3p:R`.V;4Im[J=7VIXGN8i_$1jlJcn$f<"aQBnKQjs0Xf^>X,F](At1Fn6oQ*niYA6^)ED>GZmt-4RQiYIVBj&P2S<EW:8@7H^j2iEW1OQ/]5P<jXu^6I12Z#$XufN"$aHi):,^tb/uC`NI;_(2JX>77Q'638X,#0";6Ar].F)gS@^Ol6r\n/Y.<3*C:o8(qU'Zu2ANq]fYUqON7J;Ho#&XD\[L6hia:>4<6b6_ILHQ)+k^Di1P7N)PZb/+pYN]GQpJE"YTgJLYZOKnK+R90HlS"1aKf+GXG7MAq=@LEZC6?N@(I[5Y^d=a23F!#H^TFKef1>Qrer'KioA+kJJT_rIdWci'S`\Q7BS3WQFfZ$f&(gpB>XPBf*_.0NUqCqS:6PL3\%l9-=6rdlCLIk``?V]#\>I3:=i[JT5fU*\D_ONp2>et!H(tYaN@\`@0Fqqr#kP/k+A7kB=\@t[)+sdgoJj:[`3P;4"88"Q^E(\47\_^*\AL':F/!Of2UT.4R%CFs[R-Wo;.IP"?(>bBDiWJ74\C92Ub3LdGO/@)[\^4!PB@j+VGL0+le:#4Kb>ES'"g"9M*u,]H_=<eMc,8XNX2auo^?8a\)g;i/I1$l>M/G[&JCkuk95tB\JI]<\Ne&$C9TB-37unBo?9OD<$]`k,X26+<(*u-7c>4e'U);0ppR(7UKjPU8Fo??fI!d/6b>6cCJ$'V;rmHXbMR1>WpqPA!gZ;LM;o#[#BBf?K0XD!39if`*A%MNHE@qjq!6o,$%::.%pH\3?KrP"?JpJ\)H94'n8\0=_R[.8,\F5sGR.j`c]a6E(i;7-SnQm1o`=CEG0;K&[RrFfO,@HHoWpg9NbmbJR?rh&"!G4\&6K7F.kR0MFTY`7p6"3%4%HbOSl%RE*4?MuVt#rOXY*h8L>_r[]p=r&/VMLp.+>#d.r0/mYX-0DKSW2piN=,VjKHTZfsgBDg98q5W`\7oF(/k3$6iD`bb,m7-F%8]T@fr5\Xqkg2WspL\!XqO&t9IZbi,Ye-s_+<HtcZK`L`]l6eS\)4sh>PBXU-o5%P]KborLRVq=g%LOGOZ!0u&C:#pBF8P)T5jnc-RSe#Nq$a>Oe<'hgDbU3uJ2",V$\XDSh.9.g#k&S]]=JF)$46GA.CG@C#:mE'qYX92[%drO:$a&DX3K?6MHS!6C8%1J,[r1nDmTuu$,`^S4<.c3>K6T;o@?Pk,pr(,5_^bD40KrcQ^MMr?5l^%Wb?0bI^5I3AYOSS"4+j4bfQ''ao?FK-BL3P"Ke:#Y&_Ts&E\U3oTD:,5r&:m[8RU&sf\'eG(:X"$qt?9Bm?Pj-V7@Ukos2T_"]9<pgs\tf9t!ctmq@BI:G25I[&E_T^^eft7gIG96Q2F\[c_haEWj[Xo8Be2_af<84YKJr=q:c#Kr&D<Z$`:qr+&OAcjM)K_:jEaF#2;f/U_g]Mp]qhUQU%"r);*nBmni^Q?C7EDGu;"b`^N9,dr[!39gr3T@sfWrs-E]+%-~>endstream
+Gau0EgN)=4&q0LUoNSsWS)Ko;nhccQaja(#P?:DJ+VGDB-4):)>1%ftFp#BK@um^M-`J#NB``]GICbmKq"T>Hs",.>n(7'R>l[.rlR`7E(W6)4r4'K;mo9AE.SfnA%UPIA;%SB6?+"o.>PVTsV?%sC`!`msKd?0c0M4]/*4B3]H*KL4?ASVN)0e@DM!2Jd(W"6d_eTHjpc'*)91'5.$6dGSB7?Gg\q00+Kb:VE4!jNRF8/Cq$LSk1%(p-\<t'Q@SQ+`YYl4XgYN\M0?fcaD!\YF-#jBlZdK'N5%P'42=G8^Dd,ZlBf&?Toe2=ndRVUaKp-`"&"LFl91ePVb%);gq^48@mD6tc&]I8W3#T?7.ge12\oW3fE.k_9oR++U%ID![.'MN6HOHJ8m'W6Z=8JHO9b0M1;LC6]@E1uH52QXrJcI14#=5aLm!WW#\cimA="Je:mA!q]>&C$;Y\onZGP5:Eu'XdR7kof`qnhB]f<D!;oHmu?EU6%AQ>LY.oP8sNA4$S'pOJQrO>/Ks92*5d=P^"]_UL[YOA_"&B5$a<1J([=VkmGda@>]qXfPn1[]H*!B2AHHq$!#i*>\VDQ-5t;"TQ"&Tg(NV7MV"SaSJgM:al/4co+K2Pd@kD/G*VU;='fY"S`9R\PRi97=r+sphR'n`hfE9[[^,?-1j[TT;nN[1O%*srJ584<Ps)PQe1db15?P[C./cb*,9Jp3"\O>I'8/$Ip1JKD$g%u[*WO(/*H1HT_\^<bXi7/D#&=\nH;rc%Iq3[tLHnqhbSJg#.Fo9uW*0\6R;MAVr.'+aEdE6-_MueN<ds8?dA*d@BOgMbauNT=B-l;g)P[\aJF5BM^%7$e;D4OOoa47(6a7S24BT;sG^!2>,fi.+c_#f2SpERipbNIE.W\bJjhA]qfF)T).+-;_CWP,=0.L?JUT!5p1hACr^8RFQEVJc.,5$I'R#ebTjH\[eLL_6DH^S#P3beT(=d(lP="s>'=+GVI>/\!BO$`TB#/8o&<pGV5pI6uhg)DYCYjY0l*5]]l:7*41UP=\AMGJ+O\OYjlR5"c*V(_J899+A:N#jbH`B#48-o:JsFq#,1GGLY($HQG[WM`7:Q"&]tqLoa!&WaRgS-N`?MS4DSa/;"`)*4ID-b:OC7Kpna:M2cEeT-.GG+*YYoE=!Qkh\G.;Jn:<Zn@Cn)SO4[JbP;qY@3F,GM'5qi3HdiHUdFkZ@"C,501H]V7N6Y"6>d)'+.@7nR4GRp'Vi]Xh5d9^Qd.)F%-\ee%A-X,k=PRV&nuAUc)$l*H3lW`+V4FNYp"CZs4D<p?`4r7HK`4M0jA4UGL<"A6f[IG7iU%`o%@PLB;a9k>5uSipG#jkO"1`5=5BCfb^9cY@+K?&Sf&!\0t0Qn&[]>DX3l-Im9(;cH8/./Re;:Oh\]i%!aj_3chts8jCYYj=,HUe)L.WXc;I%bE`?If!j-;HRIr=Y<-q$H1kdJ#nq7=kF\Z"qNUQ#<<?Aba4&)o;s^U75>cGr-r\cEK<qZ+=T;sIX6)<Wa^6^fb9B1D,6*R$U$O4Xr%*f3Uc[;+p_LnO4YdtQ@a0l7Xip96V]`P/'g3oM4'&.0=J*&]bTed.m/;=#q_paT%lB]1"nt264j>\$in*LJh]obNSQ#d-rLVF3p(juKd1/@@8J"<M`_U^VC^?XRI[;4KoAY)0b\kR>4f,TH[I%1#f3'fC1l5QQHgZu"Db],`)-\j&H44g'_CUF!jIk>qkZ]-UH>LAP=RY3p:R`.V;4Im[J=7VIXGN8i_$1jlJcn$f<"aQBnKQjs0Xf^>X,F](At1Fn6oQ*niYA6^)ED>GZmt-4RQiYIVBj&P2S<EW:8@7H^j2iEW1OQ/]5P<jXu^6I12Z#$XufN"$aHi):,^tb/uC`NI;_(2JX>77Q'638X,#0";6Ar].F)gS@^Ol6r\n/Y.<3*C:o8(qU'Zu2ANq]fYUqON7J;Ho#&XD\[L6hia:>4<6b6_ILHQ)+k^Di1P7N)PZb/+pYN]GQpJE"YTgJLYZOKnK+R90HlS"1aKf+GXG7MAq=@LEZC6?N@(I[5Y^d=a23F!#H^TFKef1>Qrer'KioA+kJJT_rIdWci'S`\Q7BS3WQFfZ$f&(gpB>XPBf*_.0NUqCqS:6PL3\%l9-=6rdlCLIk``?V]#\>I3:=i[JT5fU*\D_ONp2>et!H(tYaN@\`@0Fqqr#kP/k+A7kB=\@t[)+sdgoJj:[`3P;4"88"Q^E(\47\_^*\AL':F/!Of2UT.4R%CFs[R-Wo;.IP"?(>bBDiWJ74\C92Ub3LdGO/@)[\^4!PB@j+VGL0+le:#4Kb>ES'"g"9M*u,]H_=<eMc,8XNX2auo^?8a\)g;i/I1$l>M/G[&JCkuk95tB\JI]<\Ne&$C9TB-37unBo?9OD<$]`k,X26+<(*u-7c>4e'U);0ppR(7UKjPU8Fo??fI!d/6b>6cCJ$'V;rmHXbMR1>WpqPA!gZ;LM;o#[#BBf?K0XD!39if`*A%MNHE@qjq!6o,$%::.%pH\3?KrP"?JpJ\)H94'n8\0=_R[.8,\F5sGR.j`c]a6E(i;7-SnQm1o`=CEG0;K&[RrFfO,@HHoWpg9NbmbJR?rh&"!G4\&6K7F.kR0MFTY`7p6"3%4%HbOSl%RE*4?MuVt#rOXY*h8L>_r[]p=r&/VMLp.+>#d.r0/mYX-0DKSW2piN=,VjKHTZfsgBDg98q5W`\7oF(/k3$6iD`bb,m7-F%8]T@fr5\Xqkg2WspL\!XqO&t9IZbi,Ye-s_+<HtcZK`L`]l6eS\)4sh>PBXU-o5%P]KborLRVq=g%LOGOZ!0u&C:#pBF8P)T5jnc-RSe#Nq$a>Oe<'hgDbU3uJ2",V$\XDSh.9.g#k&S]]=JF)$46GA.CG@C#:mE'qYX92[%drO:$a&DX3K?6MHS!6C8%1J,[r1nDmTuu$,`^S4<.c3>K6T;o@?Pk,pr(,5_^bD40KrcQ^MMr?5l^%Wb?0bI^5I3AYOSS"4+j4bfQ''ao?FK-BL3P"Ke:#Y&_Ts&E\U3oTD:,5r&:m[8RU&sf\'eG(:X"$qt?9Bm?Pj-V7@Ukos2T_"]9<pgs\tf9t!ctmq@BI:G25I[&E_T^^eft7gIG96Q2F\[c_haEWj[Xo8Be2_af<84YKJr=q:c#Kr&D<Z$`:qr+&OAcjM)K_:jEaF#2;f/U_g]Mp]qhUQU%"r);*nBmni^Q?C7EDGu;"b`^N9,dr[!39gr3T@sfWrs-E]+%-~>
+endstream
+endobj
+14 0 obj
+<<
+/F1 6 0 R
+/F2 8 0 R
+/F3 10 0 R
+/F4 11 0 R
+>>
+endobj
+15 0 obj
+<<
+/Type /Annot
+/Subtype /Link
+/P 4 0 R
+/Rect [ 345.242 799 534 820 ]
+/H /I
+/Border [ 0 0 0 ]
+/A <<
+/S /URI
+/URI (https\072\057\057github\056com\057Talal\055games\057Action\055Frisbee\055with\055Smart\055Camera)
+>>
+>>
 endobj
 xref
-0 13
+0 16
 0000000000 65535 f 
-0000000061 00000 n 
-0000000122 00000 n 
-0000000229 00000 n 
-0000000339 00000 n 
-0000000451 00000 n 
-0000000566 00000 n 
-0000000771 00000 n 
-0000000976 00000 n 
-0000001045 00000 n 
-0000001325 00000 n 
-0000001391 00000 n 
-0000004949 00000 n 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000120 00000 n 
+0000000169 00000 n 
+0000000453 00000 n 
+0000009731 00000 n 
+0000009838 00000 n 
+0000009945 00000 n 
+0000010055 00000 n 
+0000010167 00000 n 
+0000010280 00000 n 
+0000010396 00000 n 
+0000010598 00000 n 
+0000013931 00000 n 
+0000013995 00000 n 
 trailer
 <<
-/ID 
-[<ba8d86d3600dd92a5ccfc7d4fc083b9d><ba8d86d3600dd92a5ccfc7d4fc083b9d>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 9 0 R
-/Root 8 0 R
-/Size 13
+/Size 16
+/Root 3 0 R
+/Info 1 0 R
 >>
 startxref
-8281
+14229
 %%EOF
