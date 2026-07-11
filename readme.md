@@ -6,12 +6,16 @@ For the short technical write-up, see [technical_report.md](technical_report.md)
 
 ## Setup
 
+To inspect or modify the project in Unity:
+
 1. Clone or download this repository from GitHub.
 2. Open the project in Unity Hub using Unity `2022.3.40f1`.
 3. Let Unity import the project and restore packages from `Packages/manifest.json`.
 4. Open `Assets/Scenes/SampleScene.unity`.
 5. If FMOD shows a setup or migration prompt, click through it or ignore it unless you need to modify audio events. The gameplay scripts can still be inspected and tuned.
 6. Press Play.
+
+Alternatively, you can play without opening Unity by running the included build.
 
 ## Controls
 
